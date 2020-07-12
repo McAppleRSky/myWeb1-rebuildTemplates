@@ -1,0 +1,35 @@
+buildscript {
+  repositories {
+    flatDir {
+      dirs '/lib/'
+    }
+  }
+}
+
+
+plugins {
+//        id 'java'
+        id "com.moowork.node" version "1.3.1"
+}
+
+node {
+    version = '10.21.0'
+    npmVersion = '6.14.6'
+    npmWorkDir = file("${buildDir}/npm")
+    download = false
+}
+//task hello(type: NodeTask){script = file("hello.js")}
+
+task installPackage(type: NpmTask){
+  args = ["install", "--save", project.findProperty("package")]
+}
+
+task installHtmlDiffer(type: NpmTask, dependsOn: "npmInstall"){
+  args = ["install", "--save", "html-differ"]
+}
+
+task htmlDiffer(type: NodeTask, dependsOn: "installHtmlDiffer"){
+  script = file("node_modules/html-differ/bin/html-differ")
+  args = ["expected/index.htm", "rebuild/index.html"]
+//  outputs.dirs file("")
+}
