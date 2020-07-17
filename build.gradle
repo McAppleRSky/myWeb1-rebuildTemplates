@@ -29,6 +29,18 @@ task installHtmlDiffer(type: NpmTask, dependsOn: "npmInstall"){
 }
 
 task htmlDiffer(type: NodeTask, dependsOn: "installHtmlDiffer"){
+  doFirst{
+    def color = {
+      color, text -> def colors = [
+        black: 30, red: 31, green: 32, yellow: 33, blue: 34, magenta: 35, cyan: 36, white: 37
+      ]
+      return new String((char) 27) + "[${colors[color]}m${text}" + new String((char) 27) + "[0m"
+    }
+    println "this is ${color 'green', 'some'} ${color 'red', 'colorful'} ${color 'white', 'test'}"
+  }
+
+
+
   script = file("node_modules/html-differ/bin/html-differ")
   args = ["expected/index.htm", "rebuild/index.html"]
 //  outputs.dirs file("")
