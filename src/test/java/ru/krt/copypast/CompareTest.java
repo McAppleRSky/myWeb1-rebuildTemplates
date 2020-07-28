@@ -15,15 +15,15 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.io.*;
 
-public class CompareTest {
-    EvalScript evalScript = new EvalScript();
+public class CompareTest extends EvalScript{
+//    EvalScript evalScript = new EvalScript();
     /*    ScriptEngineManager factory ;
     //ScriptEngine engine ;
     NashornScriptEngine engine;
     FilesystemFolder rootFolder;
 */
 //    EvalScript evalScript;
-    NashornScriptEngine nashornEngine = evalScript.getEngine();
+    NashornScriptEngine nashornEngine = getEngine();
 
     String scriptFile = "src/main/javascript/compare.js"
     ,script = String.format("load('%s')", scriptFile)

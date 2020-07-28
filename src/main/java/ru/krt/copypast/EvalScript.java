@@ -29,21 +29,28 @@ public class EvalScript implements EvalFile{
         } catch (ScriptException e) {
             e.printStackTrace();
         }
+
         try {
-            engine.eval(initScript);
+            engine.eval(loadJvmNpmJs);
 //            engine.eval("load('./jvm-npm.js')");
         } catch (ScriptException e) {
             e.printStackTrace();
         }
 
         try {
-            engine.eval(initScript1);
+            engine.eval(requireRequireJs);
         } catch (ScriptException e) {
             e.printStackTrace();
         }
 
         try {
-            engine.eval(initScript2);
+            engine.eval(requireLibpath);
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            engine.eval(requireFs);
         } catch (ScriptException e) {
             e.printStackTrace();
         }

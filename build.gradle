@@ -1,17 +1,13 @@
 buildscript {
-  repositories {
-    flatDir {
-      dirs 'lib', '../../repository/lib'
-    }
-  }
+//  repositories {flatDir {dirs 'lib', '../../repository/lib'}}
   dependencies {
     classpath "com.github.node-gradle:gradle-node-plugin:2.2.4"
   }
 }
 
 plugins {
-  id 'java'
   id "com.github.node-gradle.node" version "2.2.4"
+  id 'java'
 }
 
 group 'krt.copypast'
@@ -32,7 +28,7 @@ dependencies {
 node {
   version = '10.21.0'
   npmVersion = '6.14.6'
-  npmWorkDir = file("${buildDir}/npm")
+//  npmWorkDir = file("${buildDir}/npm")
   download = false
 }
 
@@ -51,11 +47,15 @@ task installJvmNpm(type: NpmTask, dependsOn: "npmInstall"){
   args = ["install", "jvm-npm", "--save"]
 }
 
+task installRequireDir(type: NpmTask, dependsOn: "installJvmNpm"){
+  args = ["install", "file-system", "--save"]
+}
+
 //task installRequireDir(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "require-dir", "--save"]}
 //task installRekuire(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "rekuire", "--save"]}
 //task installFs(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "fs", "--save"]}
 
-task installHtmlDiffer(type: NpmTask, dependsOn: "installJvmNpm"){
+task installHtmlDiffer(type: NpmTask, dependsOn: "installRequireDir"){
 
   args = ["install", "html-differ", "--save"]
 
