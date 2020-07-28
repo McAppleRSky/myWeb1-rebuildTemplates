@@ -50,10 +50,17 @@ public class EvalScript implements EvalFile{
         }
 
         try {
+            engine.eval(loadNodeschnaps);
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+
+/*        try {
             engine.eval(requireFs);
         } catch (ScriptException e) {
             e.printStackTrace();
         }
+*/
     }
 
 //    public static void setUpNashorn(String[] args) throws Exception {

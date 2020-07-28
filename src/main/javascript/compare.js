@@ -1,9 +1,14 @@
-var fs = require('fs'),
-    HtmlDiffer = require('html-differ').HtmlDiffer,
-    logger = require('html-differ/lib/logger');
+var //fs = require('fs'),
+    HtmlDiffer = //require('html-differ').HtmlDiffer
+    require('./node_modules/html-differ/lib/index.js')
+    ,logger = require('html-differ/lib/logger')
+    ;
 
-var html1 = fs.readFileSync('expected/index.htm', 'utf-8'),
-    html2 = fs.readFileSync('rebuild/index.html', 'utf-8');
+var html1 = //fs.readFileSync('expected/index.htm', 'utf-8')
+"<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>"
+    ,html2 = //fs.readFileSync('rebuild/index.html', 'utf-8')
+"<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body><div></div></body></html>"
+    ;
 
 var options = {
         ignoreAttributes: [],

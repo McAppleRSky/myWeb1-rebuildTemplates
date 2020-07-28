@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">36.872s</div>
+<div class="counter">0.809s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">testNode</td>
-<td class="success">36.872s</td>
+<td class="success">0.809s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -88,7 +88,7 @@
 <h2>Standard error</h2>
 <span class="code">
 <pre>Warning: Nashorn engine is planned to be removed from a future JDK release
-javax.script.ScriptException: require() failed to find matching file for module 'file-system' in working directory '/mnt/d/projects/myWeb1-rebuildTemplates'  and not found in paths [&quot;libpath1&quot;,&quot;libpath2&quot;] in src/main/javascript/require.js at line number 108 at column number 6
+javax.script.ScriptException: Error: NODESCHNAPS_PATH is not set! in ./node_modules/nodeschnaps/loader.js at line number 39 at column number 12
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.throwAsScriptException(NashornScriptEngine.java:477)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:461)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:413)
@@ -143,17 +143,28 @@ javax.script.ScriptException: require() failed to find matching file for module 
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: src/main/javascript/require.js:108:6 require() failed to find matching file for module 'file-system' in working directory '/mnt/d/projects/myWeb1-rebuildTemplates'  and not found in paths [&quot;libpath1&quot;,&quot;libpath2&quot;]
-	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ECMAException.create(ECMAException.java:113)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$35$require$cu1$restOf.L:1#_require(src/main/javascript/require.js:108)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$32$4732A$require.L:1#_requireClosure#L:167(src/main/javascript/require.js:168)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$31$\^eval\_/0x000000084023f840.:program(&lt;eval&gt;:1)
+Caused by: ./node_modules/nodeschnaps/loader.js:39:12 Error: NODESCHNAPS_PATH is not set!
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.initException(NativeError.java:135)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.&lt;init&gt;(NativeError.java:101)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.&lt;init&gt;(NativeError.java:105)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.&lt;init&gt;(NativeError.java:109)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.constructor(NativeError.java:128)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$39$895$loader$cu1$restOf.L:4#RequireConfig(./node_modules/nodeschnaps/loader.js:39)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$37$34$loader$cu1$restOf.L:4(./node_modules/nodeschnaps/loader.js:33)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$33$loader.:program(./node_modules/nodeschnaps/loader.js:4)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:655)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:513)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptRuntime.apply(ScriptRuntime.java:527)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.Context.evaluateSource(Context.java:1438)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.Context.load(Context.java:962)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.Global.load(Global.java:1720)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$31$\^eval\_/0x0000000840237040.:program(&lt;eval&gt;:1)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:655)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:513)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptRuntime.apply(ScriptRuntime.java:527)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:456)
 	... 52 more
-javax.script.ScriptException: require() failed to find matching file for module 'fs' in working directory '/mnt/d/projects/myWeb1-rebuildTemplates'  and not found in paths [&quot;libpath1&quot;,&quot;libpath2&quot;] in src/main/javascript/require.js at line number 108 at column number 6
+javax.script.ScriptException: Error: Error executing module ./node_modules/html-differ/lib/index.js line #undefined : undefined in src/main/javascript/require.js at line number 155 at column number 6
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.throwAsScriptException(NashornScriptEngine.java:477)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:461)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:413)
@@ -208,18 +219,22 @@ javax.script.ScriptException: require() failed to find matching file for module 
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: src/main/javascript/require.js:108:6 require() failed to find matching file for module 'fs' in working directory '/mnt/d/projects/myWeb1-rebuildTemplates'  and not found in paths [&quot;libpath1&quot;,&quot;libpath2&quot;]
-	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ECMAException.create(ECMAException.java:113)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$35$require.L:1#_require(src/main/javascript/require.js:108)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$32$4732A$require.L:1#_requireClosure#L:167(src/main/javascript/require.js:168)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$39$compare.:program(src/main/javascript/compare.js:1)
+Caused by: src/main/javascript/require.js:155:6 Error: Error executing module ./node_modules/html-differ/lib/index.js line #undefined : undefined
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.initException(NativeError.java:135)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.&lt;init&gt;(NativeError.java:101)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.&lt;init&gt;(NativeError.java:105)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.&lt;init&gt;(NativeError.java:109)
+	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.NativeError.constructor(NativeError.java:128)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$64$require$cu1$restOf.L:1#_require(src/main/javascript/require.js:155)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$44$4732A$require.L:1#_requireClosure#L:167(src/main/javascript/require.js:168)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$43$compare.:program(src/main/javascript/compare.js:3)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:655)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:513)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptRuntime.apply(ScriptRuntime.java:527)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.Context.evaluateSource(Context.java:1438)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.Context.load(Context.java:962)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.Global.load(Global.java:1720)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$37$\^eval\_/0x000000084025e040.:program(&lt;eval&gt;:1)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$41$\^eval\_/0x000000084023d040.:program(&lt;eval&gt;:1)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:655)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:513)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptRuntime.apply(ScriptRuntime.java:527)
@@ -236,7 +251,7 @@ Caused by: src/main/javascript/require.js:108:6 require() failed to find matchin
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.5.1</a> at 28 июл. 2020 г., 12:57:02</p>
+<a href="http://www.gradle.org">Gradle 6.5.1</a> at 28 июл. 2020 г., 17:58:21</p>
 </div>
 </div>
 </body>
