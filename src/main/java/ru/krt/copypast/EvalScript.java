@@ -20,6 +20,7 @@ public class EvalScript implements EvalFile{
 
     public EvalScript() {
         /*
+        * https://github.com/malaporte/nashorn-commonjs-modules
         * https://github.com/provegard/nashorn-require
         * https://github.com/walterhiggins/commonjs-modules-javax-script
         * https://github.com/walterhiggins/commonjs-modules-javax-script/blob/master/README.md
@@ -49,13 +50,12 @@ public class EvalScript implements EvalFile{
             e.printStackTrace();
         }
 
-        try {
+/*        try {
             engine.eval(loadNodeschnaps);
         } catch (ScriptException e) {
             e.printStackTrace();
         }
-
-/*        try {
+        try {
             engine.eval(requireFs);
         } catch (ScriptException e) {
             e.printStackTrace();

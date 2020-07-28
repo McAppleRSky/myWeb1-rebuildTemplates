@@ -47,16 +47,13 @@ task installJvmNpm(type: NpmTask, dependsOn: "npmInstall"){
   args = ["install", "jvm-npm", "--save"]
 }
 
-task installNodeschnaps(type: NpmTask, dependsOn: "installJvmNpm"){
-  args = ["install", "nodeschnaps", "--save"]
-}
-
+//task installNodeschnaps(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "nodeschnaps", "--save"]}
 //task installRequireDir(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "file-system", "--save"]}
 //task installRequireDir(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "require-dir", "--save"]}
 //task installRekuire(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "rekuire", "--save"]}
 //task installFs(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "fs", "--save"]}
 
-task installHtmlDiffer(type: NpmTask, dependsOn: "installNodeschnaps"){
+task installHtmlDiffer(type: NpmTask, dependsOn: "installJvmNpm"){
 
   args = ["install", "html-differ", "--save"]
 
@@ -79,5 +76,5 @@ classes.dependsOn.add(installHtmlDiffer)
 test{
   // show standard out and standard error of the test JVM(s) on the console
   testLogging.showStandardStreams = true
-  environment "NODESCHNAPS_PATH", "/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/nodeschnaps/lib"
+//  environment "NODESCHNAPS_PATH", "/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/nodeschnaps/lib"
 }

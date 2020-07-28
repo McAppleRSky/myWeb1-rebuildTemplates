@@ -1,6 +1,6 @@
 var //fs = require('fs'),
-    HtmlDiffer = //require('html-differ').HtmlDiffer
-    require('./node_modules/html-differ/lib/index.js')
+    HtmlDiffer = require('html-differ').HtmlDiffer
+//    require('./node_modules/html-differ/lib/index.js')
     ,logger = require('html-differ/lib/logger')
     ;
 
