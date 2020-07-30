@@ -20,8 +20,12 @@ repositories {flatDir {dirs '../../repository/lib'}}
 dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.12'
   testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+// https://mvnrepository.com/artifact/org.mockito/mockito-core
+  testCompile group: 'org.mockito', name: 'mockito-core', version: '1.10.19'
 // https://mvnrepository.com/artifact/com.coveo/nashorn-commonjs-modules
   compile group: 'com.coveo', name: 'nashorn-commonjs-modules', version: '1.0.9'
+// https://mvnrepository.com/artifact/commons-io/commons-io
+  compile group: 'commons-io', name: 'commons-io', version: '2.7'
 //  classpath "com.coveo:nashorn-commonjs-modules:1.0.9'"
 }
 

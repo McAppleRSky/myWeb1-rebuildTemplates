@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.krt.copypast.CompareTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-28T21:04:55" hostname="DESKTOP-2AVECJ5" time="0.642">
+<testsuite name="ru.krt.copypast.CompareTest" tests="3" skipped="0" failures="1" errors="0" timestamp="2020-07-30T13:53:39" hostname="e.borisov.dc.rk" time="1.162">
   <properties/>
-  <testcase name="testNode" classname="ru.krt.copypast.CompareTest" time="0.642"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Warning: Nashorn engine is planned to be removed from a future JDK release
-javax.script.ScriptException: require() failed to find matching file for module 'html-differ' in working directory '/mnt/d/projects/myWeb1-rebuildTemplates'  and not found in paths ["node_modules/html-differ","libpath2"] in src/main/javascript/require.js at line number 108 at column number 6
+  <testcase name="before" classname="ru.krt.copypast.CompareTest" time="0.503"/>
+  <testcase name="htmlTest" classname="ru.krt.copypast.CompareTest" time="0.027"/>
+  <testcase name="requireTest" classname="ru.krt.copypast.CompareTest" time="0.631">
+    <failure message="javax.script.ScriptException: Error: Module not found:  in ./jvm-npm.js at line number 85" type="javax.script.ScriptException">javax.script.ScriptException: Error: Module not found:  in ./jvm-npm.js at line number 85
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.throwAsScriptException(NashornScriptEngine.java:477)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:461)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:413)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:409)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.eval(NashornScriptEngine.java:162)
 	at java.scripting/javax.script.AbstractScriptEngine.eval(AbstractScriptEngine.java:264)
-	at ru.krt.copypast.CompareTest.testNode(CompareTest.java:35)
+	at ru.krt.copypast.CompareTest.requireTest(CompareTest.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -20,6 +20,7 @@ javax.script.ScriptException: require() failed to find matching file for module 
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
@@ -59,22 +60,23 @@ javax.script.ScriptException: require() failed to find matching file for module 
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: src/main/javascript/require.js:108:6 require() failed to find matching file for module 'html-differ' in working directory '/mnt/d/projects/myWeb1-rebuildTemplates'  and not found in paths ["node_modules/html-differ","libpath2"]
-	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ECMAException.create(ECMAException.java:113)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$37$require$cu1$restOf.L:1#_require(src/main/javascript/require.js:108)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$34$4732A$require.L:1#_requireClosure#L:167(src/main/javascript/require.js:168)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$33$compare.:program(src/main/javascript/compare.js:2)
-	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:655)
-	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:513)
-	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptRuntime.apply(ScriptRuntime.java:527)
-	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.Context.evaluateSource(Context.java:1438)
-	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.Context.load(Context.java:962)
-	at jdk.scripting.nashorn/jdk.nashorn.internal.objects.Global.load(Global.java:1720)
-	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$31$\^eval\_/0x0000000840230040.:program(<eval>:1)
+Caused by: ./jvm-npm.js:85 Error: Module not found: 
+	at com.coveo.nashorn_modules.Module.throwModuleNotFoundException(Module.java:367)
+	at com.coveo.nashorn_modules.Module.require(Module.java:126)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$70$2295AA$jvm_npm$cu1$restOf.L:21#Require(./jvm-npm.js:85)
+	at jdk.scripting.nashorn.scripts/jdk.nashorn.internal.scripts.Script$Recompilation$35$\^eval\_/0x0000000840221040.:program(&lt;eval&gt;:1)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunctionData.invoke(ScriptFunctionData.java:655)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptFunction.invoke(ScriptFunction.java:513)
 	at jdk.scripting.nashorn/jdk.nashorn.internal.runtime.ScriptRuntime.apply(ScriptRuntime.java:527)
 	at jdk.scripting.nashorn/jdk.nashorn.api.scripting.NashornScriptEngine.evalImpl(NashornScriptEngine.java:456)
-	... 52 more
+	... 53 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[Cannot resolve  defaulting to native
+]]></system-out>
+  <system-err><![CDATA[Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Warning: Nashorn engine is planned to be removed from a future JDK release
 ]]></system-err>
 </testsuite>
