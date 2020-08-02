@@ -51,6 +51,7 @@ task installJvmNpm(type: NpmTask, dependsOn: "npmInstall"){
   args = ["install", "jvm-npm", "--save"]
 }
 
+//task installDotenvNpm(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "dotenv", "--save"]}
 //task installNodeschnaps(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "nodeschnaps", "--save"]}
 //task installRequireDir(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "file-system", "--save"]}
 //task installRequireDir(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "require-dir", "--save"]}
