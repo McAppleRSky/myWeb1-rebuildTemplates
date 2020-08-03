@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.krt.copypast.CompareTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-02T20:21:32" hostname="DESKTOP-2AVECJ5" time="75.879">
+<testsuite name="ru.krt.copypast.CompareTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-03T14:53:22" hostname="e.borisov.dc.rk" time="9.209">
   <properties/>
-  <testcase name="loadingFromFilesystem" classname="ru.krt.copypast.CompareTest" time="75.879"/>
+  <testcase name="loadingFromFilesystem" classname="ru.krt.copypast.CompareTest" time="9.209"/>
   <system-out><![CDATA[?[32m?[7m+ expected?[27m?[39m ?[31m?[7m- actual?[27m?[39m 
- 
-...
-?[90met="utf-8"><title></title></head><body><?[39m?[32m?[7mdiv><?[27m?[39m?[90m/?[39m?[32m?[7mdiv></?[27m?[39m?[90mbody></html>?[39m
-?[32m?[7m+ expected?[27m?[39m ?[31m?[7m- actual?[27m?[39m 
  
 ...
 ?[90met="utf-8"><title></title></head><body><?[39m?[32m?[7mdiv><?[27m?[39m?[90m/?[39m?[32m?[7mdiv></?[27m?[39m?[90mbody></html>?[39m

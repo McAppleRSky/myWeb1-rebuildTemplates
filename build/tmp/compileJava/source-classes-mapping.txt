@@ -1,4 +1,4 @@
-ru/krt/copypast/EvalFile.java
- ru.krt.copypast.EvalFile
-ru/krt/copypast/EvalScript.java
- ru.krt.copypast.EvalScript
+ru/krt/copypast/NashornScripter.java
+ ru.krt.copypast.NashornScripter
+ru/krt/copypast/ScripterProps.java
+ ru.krt.copypast.ScripterProps

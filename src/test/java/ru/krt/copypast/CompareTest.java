@@ -1,34 +1,28 @@
 package ru.krt.copypast;
 
 import com.coveo.nashorn_modules.FilesystemFolder;
-import com.coveo.nashorn_modules.Require;
 import com.coveo.nashorn_modules.Module;
-import com.coveo.nashorn_modules.ResourceFolder;
+import com.coveo.nashorn_modules.Require;
 import jdk.nashorn.api.scripting.NashornScriptEngine;
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.io.*;
 
 import static org.junit.Assert.assertNotNull;
+import static ru.krt.copypast.ScripterProps.JvmNpmScript;
 
-public class CompareTest {
-
-    FilesystemFolder rootPath;
-    NashornScriptEngine engine;
+public class CompareTest implements ScripterProps{
+    NashornScriptEngine engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName(engineName);
+    FilesystemFolder currentNpmprojectPath;
     Module require;
-    ResourceFolder resourceFolder;
 
     @Test
-    @Before
     public void loadingFromFilesystem() throws Throwable{
-        engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName("nashorn");
-        engine.eval("load('./node_modules/jvm-npm/src/main/javascript/jvm-npm.js');");
-        rootPath = FilesystemFolder.create(new File(""), "UTF-8");
-        require = Require.enable(engine, rootPath);
+        engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName(engineName);
+        engine.eval(JvmNpmScript);
+        currentNpmprojectPath = FilesystemFolder.create(new File(pathName), encoding);
+        require = Require.enable(engine, currentNpmprojectPath);
         engine.eval(new FileReader("src/main/javascript/compare.js"));
     }
 
