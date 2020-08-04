@@ -1,0 +1,82 @@
+buildscript {
+//  repositories {flatDir {dirs 'lib', '../../repository/lib'}}
+  dependencies {
+    classpath "com.github.node-gradle:gradle-node-plugin:2.2.4"
+  }
+}
+
+plugins {
+  id "com.github.node-gradle.node" version "2.2.4"
+  id 'java'
+}
+
+group 'krt.copypast'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 11
+
+repositories {flatDir {dirs '../../repository/lib'}}
+
+dependencies {
+  testCompile group: 'junit', name: 'junit', version: '4.12'
+  testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+// https://mvnrepository.com/artifact/org.mockito/mockito-core
+//  testCompile group: 'org.mockito', name: 'mockito-core', version: '1.10.19'
+// https://mvnrepository.com/artifact/com.coveo/nashorn-commonjs-modules
+  compile group: 'com.coveo', name: 'nashorn-commonjs-modules', version: '1.0.9'
+// https://mvnrepository.com/artifact/commons-io/commons-io
+  compile group: 'commons-io', name: 'commons-io', version: '2.7'
+//  classpath "com.coveo:nashorn-commonjs-modules:1.0.9'"
+}
+
+node {
+  version = '10.21.0'
+  npmVersion = '6.14.6'
+  download = false
+}
+
+defaultTasks 'build'
+
+def getJavaVersion() {
+  def out = new ByteArrayOutputStream()
+  exec {
+    commandLine 'java', '--version'
+    standardOutput = out
+  }
+  return out.toString()
+}
+
+task testMyConsole(){
+  def color = {
+    color, text -> def colors = [
+            black: 30, red: 31, green: 32, yellow: 33, blue: 34, magenta: 35, cyan: 36, white: 37
+    ]
+      return new String((char) 27) + "[${colors[color]}m${text}" + new String((char) 27) + "[0m"
+  }
+  println "|TEST enviroment"
+  println "|JAVA VERSION: " + getJavaVersion()
+  println "|this is ${color 'green', 'some'} ${color 'red', 'colorful'} ${color 'white', 'test'}"
+  println "|\u001B[36m Direct test ANSI escape-sequenced\u001B[0m"
+}
+
+//task installJvmNpm(type: NpmTask, dependsOn: "npmInstall"){args = ["install", "jvm-npm", "--save"]}
+//task installDotenvNpm(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "dotenv", "--save"]}
+//task installNodeschnaps(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "nodeschnaps", "--save"]}
+//task installRequireDir(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "file-system", "--save"]}
+//task installRequireDir(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "require-dir", "--save"]}
+//task installRekuire(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "rekuire", "--save"]}
+//task installFs(type: NpmTask, dependsOn: "installJvmNpm"){args = ["install", "fs", "--save"]}
+
+task installHtmlDiffer(type: NpmTask){
+  args = ["install", "html-differ", "--save"]
+}
+
+classes.dependsOn.add(installHtmlDiffer)
+
+test{
+  // never UP-TO-DATE
+  systemProperty "random.testing.seed", new Random().nextInt()
+  // show standard out and standard error of the test JVM(s) on the console
+  testLogging.showStandardStreams = true
+//  environment "NODESCHNAPS_PATH", "/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/nodeschnaps/lib"
+}

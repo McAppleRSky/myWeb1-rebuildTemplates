@@ -13,7 +13,6 @@
   "author": "mcapple <mcapple@yandex.ru>",
   "license": "ISC",
   "dependencies": {
-    "html-differ": "^1.4.0",
-    "jvm-npm": "^0.1.1"
+    "html-differ": "^1.4.0"
   }
 }

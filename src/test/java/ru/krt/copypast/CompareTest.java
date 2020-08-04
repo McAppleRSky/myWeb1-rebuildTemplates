@@ -10,19 +10,20 @@ import javax.script.ScriptEngineManager;
 import java.io.*;
 
 import static org.junit.Assert.assertNotNull;
-import static ru.krt.copypast.ScripterProps.JvmNpmScript;
+//import static ru.krt.copypast.ScripterProps.JvmNpmScript;
 
-public class CompareTest implements ScripterProps{
-    NashornScriptEngine engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName(engineName);
+public class CompareTest {
+    @SuppressWarnings("removal")
+    NashornScriptEngine engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName("nashorn");
     FilesystemFolder currentNpmprojectPath;
     Module require;
 
     @Test
     public void loadingFromFilesystem() throws Throwable{
-        engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName(engineName);
-        engine.eval(JvmNpmScript);
-        currentNpmprojectPath = FilesystemFolder.create(new File(pathName), encoding);
+//        engine.eval(JvmNpmScript);
+        currentNpmprojectPath = FilesystemFolder.create(new File(""), "UTF-8");
         require = Require.enable(engine, currentNpmprojectPath);
+        engine.eval(new FileReader("src/main/javascript/prepare.js"));
         engine.eval(new FileReader("src/main/javascript/compare.js"));
     }
 

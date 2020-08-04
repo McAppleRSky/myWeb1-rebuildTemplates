@@ -1,15 +1,7 @@
 //console.log("process.platform : " + process.platform);
 //require('dotenv').config();
-var process = {
-    env: {
-        FORCE_COLOR: true
-    }
-}
-var console = {
-    log: print,
-    warn: print,
-    error: print
-};
+//var process = {env: {FORCE_COLOR: true}}
+//var console = {log: print, warn: print, error: print};
 
 var //fs = require('fs'),
     HtmlDiffer = require('html-differ').HtmlDiffer
@@ -18,9 +10,11 @@ var //fs = require('fs'),
     ;
 
 var html1 = //fs.readFileSync('expected/index.htm', 'utf-8')
-"<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>"
+//"<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>"
+getFile("expected/index.htm")
     ,html2 = //fs.readFileSync('rebuild/index.html', 'utf-8')
-"<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body><div></div></body></html>"
+//"<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body><div></div></body></html>"
+getFile("rebuild/index.html")
     ;
 
 var options = {
