@@ -1,0 +1,9 @@
+repositories {
+  flatDir {
+    dirs '../../../repository/lib'
+  }
+}
+
+dependencies {
+//  compile group: 'org.apache.commons', name: 'junit', version: '4.12'
+}

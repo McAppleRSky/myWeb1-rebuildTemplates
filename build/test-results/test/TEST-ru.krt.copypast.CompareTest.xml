@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.krt.copypast.CompareTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-04T15:12:56" hostname="e.borisov.dc.rk" time="14.08">
+<testsuite name="ru.krt.copypast.CompareTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-04T19:58:26" hostname="DESKTOP-2AVECJ5" time="42.808">
   <properties/>
-  <testcase name="loadingFromFilesystem" classname="ru.krt.copypast.CompareTest" time="14.08"/>
+  <testcase name="loadingFromFilesystem" classname="ru.krt.copypast.CompareTest" time="42.808"/>
   <system-out><![CDATA[?[32m?[7m+ expected?[27m?[39m ?[31m?[7m- actual?[27m?[39m 
  
 ...
@@ -33,7 +33,7 @@
 ...
 ?[90matetime="2019-11-13">13.11.19 г.</time>,?[39m?[31m?[7m Борисов Е.А. Все права защищены. © Копирование запрещено?[27m?[39m?[90m<br>Автор:<a href="mailto:mcapple@yandex?[39m
 ...
-?[90m<div></div></td></tr></table></footer></?[39m?[32m?[7mfooter></?[27m?[39m?[90mbody></html>?[39m
+?[90m<div></div></td></tr></table></footer></?[39m?[32m?[7mfooter></?[27m?[39m?[90mbody></html>??[39m
 ]]></system-out>
   <system-err><![CDATA[Warning: Nashorn engine is planned to be removed from a future JDK release
 ]]></system-err>

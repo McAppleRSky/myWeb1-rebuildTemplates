@@ -40,6 +40,11 @@ node {
 
 defaultTasks 'build'
 
+task  giveProperies(type: property.PropertyTask){
+  expected=expected
+  actual=actual
+}
+
 task installHtmlDiffer(type: NpmTask){
   args = ["install", "html-differ", "--save"]
 }
