@@ -1,8 +1,12 @@
+
 repositories {
     flatDir {
         dirs '../../../repository/lib'
     }
 }
+
+sourceCompatibility = 11
+targetCompatibility = 11
 
 dependencies {
     // https://mvnrepository.com/artifact/org.apache.commons/commons-email
@@ -13,5 +17,4 @@ dependencies {
     compile group: 'com.coveo', name: 'nashorn-commonjs-modules', version: '1.0.9'
 // https://mvnrepository.com/artifact/commons-io/commons-io
     compile group: 'commons-io', name: 'commons-io', version: '2.7'
-
 }

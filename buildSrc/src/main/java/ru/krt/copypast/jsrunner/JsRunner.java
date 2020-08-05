@@ -36,7 +36,8 @@ public class JsRunner extends DefaultTask {
 
     @TaskAction
     private void runJs() throws ScriptException, FileNotFoundException {
-        currentNpmprojectPath = FilesystemFolder.create(new File(toNodemodules), "UTF-8");
+        currentNpmprojectPath = FilesystemFolder.create(new File(toNodemodules
+                                                                    ), "UTF-8");
         require = Require.enable(engine, currentNpmprojectPath);
         engine.eval(new FileReader("src/main/javascript/prepare.js"));
         engine.eval(new FileReader("src/main/javascript/compare.js"));

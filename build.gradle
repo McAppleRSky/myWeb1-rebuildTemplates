@@ -13,6 +13,7 @@ group 'krt.copypast'
 version '0.0.1-SNAPSHOT'
 
 sourceCompatibility = 11
+targetCompatibility = 11
 
 repositories {
   flatDir {
@@ -47,13 +48,6 @@ task installHtmlDiffer(type: NpmTask){
 }
 
 classes.dependsOn.add(installHtmlDiffer)
-
-test{
-  // never UP-TO-DATE
-  systemProperty "random.testing.seed", new Random().nextInt()
-  // show standard out and standard error of the test JVM(s) on the console
-  testLogging.showStandardStreams = true
-}
 
 task runJs(type: ru.krt.copypast.jsrunner.JsRunner, dependsOn: build){
   expecteds = expected
