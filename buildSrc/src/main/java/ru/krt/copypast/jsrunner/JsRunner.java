@@ -5,6 +5,7 @@ import com.coveo.nashorn_modules.Module;
 import com.coveo.nashorn_modules.Require;
 import jdk.nashorn.api.scripting.NashornScriptEngine;
 import org.gradle.api.DefaultTask;
+import org.gradle.api.Project;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.TaskAction;
 
@@ -36,8 +37,11 @@ public class JsRunner extends DefaultTask {
 
     @TaskAction
     private void runJs() throws ScriptException, FileNotFoundException {
-        currentNpmprojectPath = FilesystemFolder.create(new File(toNodemodules
-                                                                    ), "UTF-8");
+//        Project project = getProject();
+
+//        String string = ;
+        currentNpmprojectPath = FilesystemFolder.create(getProject().getProjectDir()//new File(toNodemodules)
+                                                            , "UTF-8");
         require = Require.enable(engine, currentNpmprojectPath);
         engine.eval(new FileReader("src/main/javascript/prepare.js"));
         engine.eval(new FileReader("src/main/javascript/compare.js"));

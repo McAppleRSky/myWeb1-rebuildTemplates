@@ -1,4 +1,0 @@
-ru/krt/copypast/NashornScripter.java
- ru.krt.copypast.NashornScripter
-ru/krt/copypast/ScripterProps.java
- ru.krt.copypast.ScripterProps

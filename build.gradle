@@ -54,5 +54,5 @@ task runJs(type: ru.krt.copypast.jsrunner.JsRunner, dependsOn: build){
   actuals = actual
   toActual = pathActual
   toExpected = pathExpected
-  toNodemodules = pathNodemodules
+  toNodemodules = rootPath + pathNodemodules
 }
