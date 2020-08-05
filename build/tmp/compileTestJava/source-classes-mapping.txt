@@ -1,2 +1,0 @@
-ru/krt/copypast/CompareTest.java
- ru.krt.copypast.CompareTest

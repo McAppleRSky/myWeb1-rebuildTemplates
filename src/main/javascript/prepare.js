@@ -15,10 +15,10 @@ function getFile(name) {
     var chunk;
     var FileReader = Java.type("java.io.FileReader");
     var fileReader = new FileReader(name);
-    do{
+    do {
         chunk = fileReader.read();
         data += String.fromCharCode(chunk);
-    }while (chunk != -1)
+    } while (chunk != -1)
 //    chunk = fileReader.read();
 //    while (chunk != -1) {
 //        data += String.fromCharCode(chunk);

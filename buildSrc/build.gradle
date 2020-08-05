@@ -1,0 +1,17 @@
+repositories {
+    flatDir {
+        dirs '../../../repository/lib'
+    }
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-email
+//    compile group: 'org.apache.commons', name: 'commons-email', version: '1.3.3'
+    // https://mvnrepository.com/artifact/com.sun.mail/javax.mail
+//    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+    // https://mvnrepository.com/artifact/com.coveo/nashorn-commonjs-modules
+    compile group: 'com.coveo', name: 'nashorn-commonjs-modules', version: '1.0.9'
+// https://mvnrepository.com/artifact/commons-io/commons-io
+    compile group: 'commons-io', name: 'commons-io', version: '2.7'
+
+}
