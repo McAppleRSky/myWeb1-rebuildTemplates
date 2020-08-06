@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/CDC-1.0%Foundation-1.0"/>
+	<classpathentry kind="src" path="buildSrc/src/main/java"/>
+	<classpathentry kind="lib" path="build/libs/myWeb1-rebuildTemplates-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="buildSrc/build/libs/buildSrc.jar"/>
+	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="buildSrc/build/classes/java/main"/>
+</classpath>

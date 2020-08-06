@@ -22,8 +22,8 @@ repositories {
 }
 
 dependencies {
-//  testCompile group: 'junit', name: 'junit', version: '4.12'
-//  testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+  testCompile group: 'junit', name: 'junit', version: '4.12'
+  testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
 // https://mvnrepository.com/artifact/org.mockito/mockito-core
 //  testCompile group: 'org.mockito', name: 'mockito-core', version: '1.10.19'
 // https://mvnrepository.com/artifact/com.coveo/nashorn-commonjs-modules
@@ -39,20 +39,21 @@ node {
   download = false
 }
 
-defaultTasks 'runJs'
+defaultTasks 'build'
 
-//task printProsto{print msg;}
 
-task installHtmlDiffer(type: NpmTask){
-  args = ["install", "html-differ", "--save"]
+task installMustache(type: NpmTask){
+  args = ["install", "mustache", "--save"]
 }
 
+task installHtmlDiffer(type: NpmTask, dependsOn: installMustache){
+  args = ["install", "html-differ", "--save"]
+}
 classes.dependsOn.add(installHtmlDiffer)
 
-task runJs(type: ru.krt.copypast.jsrunner.JsRunner, dependsOn: build){
-  expecteds = expected
-  actuals = actual
-  toActual = pathActual
-  toExpected = pathExpected
-  toNodemodules = rootPath + pathNodemodules
+task mainTask(type: ru.krt.copypast.js.JavaMainTaskRunner, dependsOn: build){
+//  expecteds = expected
+//  actuals = actual
+//  toActual = pathActual
+//  toExpected = pathExpected
 }

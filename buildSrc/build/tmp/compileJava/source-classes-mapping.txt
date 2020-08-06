@@ -1,2 +1,4 @@
-ru/krt/copypast/jsrunner/JsRunner.java
- ru.krt.copypast.jsrunner.JsRunner
+ru/krt/copypast/js/NashornRunner.java
+ ru.krt.copypast.js.NashornRunner
+ru/krt/copypast/js/JavaMainTaskRunner.java
+ ru.krt.copypast.js.JavaMainTaskRunner

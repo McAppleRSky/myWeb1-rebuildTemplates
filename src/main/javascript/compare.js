@@ -9,12 +9,18 @@ var //fs = require('fs'),
     ,logger = require('html-differ/lib/logger')
     ;
 
-var html1 = //fs.readFileSync('expected/index.htm', 'utf-8')
-//"<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>"
-getFile("expected/index.htm")
-    ,html2 = //fs.readFileSync('rebuild/index.html', 'utf-8')
-//"<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body><div></div></body></html>"
-getFile("rebuild/index.html")
+//var task = Java.type('ru.krt.copypast.jsrunner.JsRunner');
+    //print(task);
+
+//var html1file = task.getToExpected()+"/"+task.getExpecteds()
+//    ,html2file = task.getToActual()+"/"+task.getActuals();
+
+var html1 = "<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>"
+//getFile("expected/index.htm")
+//    getFile(html1file)
+    ,html2 = "<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body><div></div></body></html>"
+//getFile("rebuild/index.html")
+//    getFile(html2file)
     ;
 
 var options = {
