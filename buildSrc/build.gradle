@@ -5,6 +5,8 @@ repositories {
     }
 }
 
+// https://fooobar.com/questions/276589/how-do-i-add-resources-to-sourceset-with-gradle
+
 sourceCompatibility = 11
 targetCompatibility = 11
 

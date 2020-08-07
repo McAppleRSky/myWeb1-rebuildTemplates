@@ -49,6 +49,7 @@ task installMustache(type: NpmTask){
 task installHtmlDiffer(type: NpmTask, dependsOn: installMustache){
   args = ["install", "html-differ", "--save"]
 }
+
 classes.dependsOn.add(installHtmlDiffer)
 
 task mainTask(type: ru.krt.copypast.js.JavaMainTaskRunner, dependsOn: build){

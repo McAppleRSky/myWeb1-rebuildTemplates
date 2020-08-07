@@ -3,41 +3,36 @@
 //var process = {env: {FORCE_COLOR: true}}
 //var console = {log: print, warn: print, error: print};
 
-var //fs = require('fs'),
-    HtmlDiffer = require('html-differ').HtmlDiffer
-    //HtmlDiffer = require('./index').HtmlDiffer,
-
-//    require('./node_modules/html-differ/lib/index.js')
-    ,logger = require('html-differ/lib/logger')
-    ;
+//var HtmlDiffer = require('html-differ').HtmlDiffer,logger = require('html-differ/lib/logger');
 
 //var task = Java.type('ru.krt.copypast.jsrunner.JsRunner');
-    //print(task);
+//print(task);
 
 //var html1file = task.getToExpected()+"/"+task.getExpecteds()
 //    ,html2file = task.getToActual()+"/"+task.getActuals();
 
-var html1 = "<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>"
-//getFile("expected/index.htm")
-//    getFile(html1file)
-    ,html2 = "<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body><div></div></body></html>"
-//getFile("rebuild/index.html")
-//    getFile(html2file)
-    ;
+//var html1 = "<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>",html2 = "<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body><div></div></body></html>";
 
-var options = {
-        ignoreAttributes: [],
-        compareAttributesAsJSON: [],
-        ignoreWhitespaces: true,
-        ignoreComments: true,
-        ignoreEndTags: false,
-        ignoreDuplicateAttributes: false
-    };
+var script = function(param) {
+  var options = {
+    ignoreAttributes: [],
+    compareAttributesAsJSON: [],
+    ignoreWhitespaces: true,
+    ignoreComments: true,
+    ignoreEndTags: false,
+    ignoreDuplicateAttributes: false
+  };
 
-var htmlDiffer = new HtmlDiffer(options);
+  var htmlDiffer = new HtmlDiffer(options);
 
-var diff = htmlDiffer.diffHtml(html1, html2),
-    isEqual = htmlDiffer.isEqual(html1, html2),
-    res = logger.getDiffText(diff, { charsAroundDiff: 40 });
+  var diff = htmlDiffer.diffHtml(param, param),
+                                isEqual = htmlDiffer.isEqual(param, param),
+                                res = logger.getDiffText(diff, {
+                                    charsAroundDiff: 40
+                                });
 
-logger.logDiffText(diff, { charsAroundDiff: 40 });
+  logger.logDiffText(diff, {
+    charsAroundDiff: 40
+  });
+  return isEqual;
+}

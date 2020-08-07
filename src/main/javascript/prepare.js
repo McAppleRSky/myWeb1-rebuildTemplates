@@ -10,6 +10,14 @@ var console = {
     error: print
 }
 
+var //fs = require('fs'),
+    HtmlDiffer = require('html-differ').HtmlDiffer
+    //HtmlDiffer = require('./index').HtmlDiffer,
+
+//    require('./node_modules/html-differ/lib/index.js')
+    ,logger = require('html-differ/lib/logger')
+    ;
+
 function getFile(name) {
     var data = "";
     var chunk;
