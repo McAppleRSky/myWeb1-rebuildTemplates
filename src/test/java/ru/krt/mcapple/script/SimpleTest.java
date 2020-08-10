@@ -19,11 +19,11 @@ import java.util.concurrent.Future;
 
 import static org.junit.Assert.assertEquals;
 
-public class SimpleTest {
+public class SimpleTest implements Expected{
     String json = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/mustache/input.json")))
             ,html = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/mustache/input.html")))
             ,actual
-            ,expected = "<html>\r\n<head>\r\n\t<title>duke</title>\r\n</head>\r\n<body>\r\n\t<h1>hey java</h1>\r\n</body>\r\n</html>"
+//            ,expected = "<html>\r\n<head>\r\n\t<title>duke</title>\r\n</head>\r\n<body>\r\n\t<h1>hey java</h1>\r\n</body>\r\n</html>"
             ;
     ScriptEngineManager factory ;
     ScriptEngine engine;

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.krt.mcapple.script.HtmlTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-08-10T09:14:18" hostname="e.borisov.dc.rk" time="0.0">
-  <properties/>
-  <testcase name="simpleTest" classname="ru.krt.mcapple.script.HtmlTest" time="0.0">
-    <skipped/>
-  </testcase>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

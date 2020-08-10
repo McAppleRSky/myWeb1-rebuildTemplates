@@ -41,6 +41,12 @@ node {
 
 defaultTasks 'build'
 
+test{
+  // never UP-TO-DATE
+//  systemProperty "random.testing.seed", new Random().nextInt()
+  // show standard out and standard error of the test JVM(s) on the console
+//  testLogging.showStandardStreams = true
+}
 
 task installMustache(type: NpmTask){
   args = ["install", "mustache", "--save"]

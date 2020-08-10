@@ -1,4 +1,0 @@
-ru/krt/mcapple/script/HtmlTest.java
- ru.krt.mcapple.script.HtmlTest
-ru/krt/mcapple/script/SimpleTest.java
- ru.krt.mcapple.script.SimpleTest
