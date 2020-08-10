@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.krt.mcapple.script.HamlTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-10T15:38:38" hostname="e.borisov.dc.rk" time="1.58">
+  <properties/>
+  <testcase name="simpleTest" classname="ru.krt.mcapple.script.HamlTest" time="1.58"/>
+  <system-out><![CDATA["<tag name=\"value\" name2=\"name2\" ns:tag=\"100\">" + 
+"</tag>" +
+"<input type=\"hidden\" value=\"3\" id=\"space-end\" />" +
+"<input type=\"hidden\" value=\"3\" id=\"space-start\" />" +
+"<input type=\"hidden\" value=\"3\" id=\"space-middle\" />"
+
+]]></system-out>
+  <system-err><![CDATA[Warning: Nashorn engine is planned to be removed from a future JDK release
+]]></system-err>
+</testsuite>

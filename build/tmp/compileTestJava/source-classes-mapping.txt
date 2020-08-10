@@ -1,0 +1,10 @@
+ru/krt/mcapple/script/HtmlDifferTest.java
+ ru.krt.mcapple.script.HtmlDifferTest
+ru/krt/mcapple/script/Expected.java
+ ru.krt.mcapple.script.Expected
+ru/krt/mcapple/script/SimpleTest.java
+ ru.krt.mcapple.script.SimpleTest
+ru/krt/mcapple/script/MyUtils.java
+ ru.krt.mcapple.script.MyUtils
+ru/krt/mcapple/script/HamlTest.java
+ ru.krt.mcapple.script.HamlTest
