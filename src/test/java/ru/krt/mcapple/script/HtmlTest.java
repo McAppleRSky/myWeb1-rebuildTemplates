@@ -58,6 +58,7 @@ public class HtmlTest {
 
     @SuppressWarnings("removal")
     @Test
+    @Ignore
     public void simpleTest() throws ScriptException, NoSuchMethodException {
         String tst = "<!DOCTYPE html><html lang='en' dir='ltr'><head><meta charset='utf-8'><title></title></head><body></body></html>";
         Invocable invocable = (Invocable) engine;

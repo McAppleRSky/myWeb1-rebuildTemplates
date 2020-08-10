@@ -1,4 +1,4 @@
-ru/krt/mcapple/script/MustacheTest.java
- ru.krt.mcapple.script.MustacheTest
 ru/krt/mcapple/script/HtmlTest.java
  ru.krt.mcapple.script.HtmlTest
+ru/krt/mcapple/script/SimpleTest.java
+ ru.krt.mcapple.script.SimpleTest
