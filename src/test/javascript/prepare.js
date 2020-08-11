@@ -9,7 +9,9 @@ var console = {
     warn: print,
     error: print
 }
+
 var HtmlDiffer = require('html-differ');
+
 var HtmlDiffer = require('html-differ').HtmlDiffer
     ,logger = require('html-differ/lib/logger')
     ;
