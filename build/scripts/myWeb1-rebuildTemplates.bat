@@ -82,7 +82,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\myWeb1-rebuildTemplates-0.0.1-SNAPSHOT.jar;%APP_HOME%\lib\nashorn-commonjs-modules-1.0.9.jar;%APP_HOME%\lib\commons-io-2.7.jar;%APP_HOME%\lib\jackson-databind-2.11.2.jar
+set CLASSPATH=%APP_HOME%\lib\myWeb1-rebuildTemplates-0.0.1-SNAPSHOT.jar;%APP_HOME%\lib\nashorn-commonjs-modules-1.0.9.jar;%APP_HOME%\lib\commons-io-2.7.jar;%APP_HOME%\lib\jackson-databind-2.11.2.jar;%APP_HOME%\lib\jackson-core-2.11.2.jar;%APP_HOME%\lib\jackson-annotations-2.11.2.jar
 
 
 @rem Execute myWeb1-rebuildTemplates

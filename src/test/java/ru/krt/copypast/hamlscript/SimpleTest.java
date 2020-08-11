@@ -12,8 +12,10 @@ import java.nio.file.Paths;
 import static org.junit.Assert.assertEquals;
 
 public class SimpleTest implements Expected{
-    String json = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/mustache/input.json")))
-            ,html = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/mustache/input.html")))
+//    String json = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/mustache/input.json")))
+//            ,html = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/mustache/input.html")))
+    String json = new String(Files.readAllBytes(Paths.get("mustache/input.json")))
+            ,html = new String(Files.readAllBytes(Paths.get("mustache/input.html")))
             ,actual
 //            ,expected = "<html>\r\n<head>\r\n\t<title>duke</title>\r\n</head>\r\n<body>\r\n\t<h1>hey java</h1>\r\n</body>\r\n</html>"
             ;
@@ -26,7 +28,8 @@ public class SimpleTest implements Expected{
         factory = new ScriptEngineManager();
         engine = factory.getEngineByName("nashorn");
 
-        engine.eval("load('/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/mustache/mustache.js');");
+//        engine.eval("load('/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/mustache/mustache.js');");
+        engine.eval("load('node_modules/mustache/mustache.js');");
         engine.eval("function process(content,parameters){return Mustache.render(content, JSON.parse(parameters));}");
 
         Invocable invocable = (Invocable) engine;

@@ -28,8 +28,10 @@ public class HamlTest{
     static Module require;
 
     String
-        srcHaml4actual = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/haml/test/alt_attribs.haml")))
-        ,expected = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/haml/test/alt_attribs.html")))
+//        srcHaml4actual = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/haml/test/alt_attribs.haml")))
+//        ,expected = new String(Files.readAllBytes(Paths.get("/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/haml/test/alt_attribs.html")))
+    srcHaml4actual = new String(Files.readAllBytes(Paths.get("node_modules/haml/test/alt_attribs.haml")))
+            ,expected = new String(Files.readAllBytes(Paths.get("node_modules/haml/test/alt_attribs.html")))
 //        ,result
         ;
 
@@ -41,7 +43,8 @@ public class HamlTest{
     public void simpleTest() throws ScriptException, NoSuchMethodException {
         engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName("nashorn");
         require = Require.enable(engine, FilesystemFolder.create(new File(""), "UTF-8"));
-        engine.eval("load('/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/haml/lib/haml.js');");
+//        engine.eval("load('/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/haml/lib/haml.js');");
+        engine.eval("load('node_modules/haml/lib/haml.js');");
         engine.eval("function process(srcHaml) {return Haml.render(srcHaml);}");
         assertEquals(expected, (String) ((Invocable)engine).invokeFunction("process", srcHaml4actual));
     }

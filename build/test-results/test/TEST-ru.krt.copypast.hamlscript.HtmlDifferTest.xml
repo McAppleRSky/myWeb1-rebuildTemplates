@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.krt.copypast.hamlscript.HtmlDifferTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-11T15:15:45" hostname="e.borisov.dc.rk" time="9.853">
+<testsuite name="ru.krt.copypast.hamlscript.HtmlDifferTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-11T20:53:39" hostname="DESKTOP-2AVECJ5" time="37.662">
   <properties/>
-  <testcase name="simpleTest" classname="ru.krt.copypast.hamlscript.HtmlDifferTest" time="9.853"/>
+  <testcase name="simpleTest" classname="ru.krt.copypast.hamlscript.HtmlDifferTest" time="37.662"/>
   <system-out><![CDATA[?[32m?[7m+ expected?[27m?[39m ?[31m?[7m- actual?[27m?[39m 
  
 ?[90m<?[39m?[32m?[7m!DOCTYPE HTML><?[27m?[39m?[90mhtml?[39m?[32m?[7m dir="ltr" lang="en"?[27m?[39m?[90m><head><?[39m?[32m?[7mmeta charset="utf-8"><?[27m?[39m?[90mtitle>?[39m?[31m?[7mduke?[27m?[39m?[90m</title></head><body><?[39m?[31m?[7mh1>hey java<?[27m?[39m?[90m/?[39m?[31m?[7mh1></?[27m?[39m?[90mbody></html>?[39m

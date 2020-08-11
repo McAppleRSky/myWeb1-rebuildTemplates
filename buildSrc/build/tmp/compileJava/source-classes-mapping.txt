@@ -1,7 +1,7 @@
-ru/krt/copypast/hamlscript/NashornRunner.java
- ru.krt.copypast.hamlscript.NashornRunner
 ru/krt/copypast/hamlscript/Deps.java
  ru.krt.copypast.hamlscript.Deps
+ru/krt/copypast/hamlscript/NashornRunner.java
+ ru.krt.copypast.hamlscript.NashornRunner
 ru/krt/copypast/hamlscript/TaskQueue.java
  ru.krt.copypast.hamlscript.TaskQueue
 ru/krt/copypast/hamlscript/JavaMainTaskRunner.java

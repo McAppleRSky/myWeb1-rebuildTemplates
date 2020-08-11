@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.krt.copypast.hamlscript.SimpleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-11T15:15:45" hostname="e.borisov.dc.rk" time="0.563">
+<testsuite name="ru.krt.copypast.hamlscript.SimpleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-11T20:54:17" hostname="DESKTOP-2AVECJ5" time="0.877">
   <properties/>
-  <testcase name="mustacheTest" classname="ru.krt.copypast.hamlscript.SimpleTest" time="0.563"/>
+  <testcase name="mustacheTest" classname="ru.krt.copypast.hamlscript.SimpleTest" time="0.877"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[Warning: Nashorn engine is planned to be removed from a future JDK release
 ]]></system-err>
