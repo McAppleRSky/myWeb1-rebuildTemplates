@@ -7,6 +7,7 @@ buildscript {
 plugins {
   id "com.github.node-gradle.node" version "2.2.4"
   id 'java'
+  id 'application'
 }
 
 group 'krt.copypast'
@@ -34,11 +35,11 @@ dependencies {
 // https://mvnrepository.com/artifact/org.jsoup/jsoup
 //  compile group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
 // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-  compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+//  compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
   // https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream
-  compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.12'
+//  compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.12'
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-//  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.2'
+  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.2'
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
 //  compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.2'
 
@@ -54,9 +55,9 @@ defaultTasks 'build'
 
 test{
   // never UP-TO-DATE
-  systemProperty "random.testing.seed", new Random().nextInt()
+//  systemProperty "random.testing.seed", new Random().nextInt()
   // show standard out and standard error of the test JVM(s) on the console
-  testLogging.showStandardStreams = true
+//  testLogging.showStandardStreams = true
 }
 
 task installHaml(type: NpmTask){
@@ -73,9 +74,12 @@ task installHtmlDiffer(type: NpmTask, dependsOn: installMustache){
 
 classes.dependsOn.add(installHtmlDiffer)
 
-task mainTask(type: ru.krt.copypast.js.JavaMainTaskRunner, dependsOn: build){
-//  expecteds = expected
-//  actuals = actual
-//  toActual = pathActual
-//  toExpected = pathExpected
+ext {
+  javaMainClass = "ru.krt.copypast.hamlscript.ExecScript"
 }
+
+application {
+  mainClassName = javaMainClass
+}
+
+build.dependsOn.add(run)

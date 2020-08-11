@@ -1,10 +1,8 @@
-ru/krt/mcapple/script/HtmlDifferTest.java
- ru.krt.mcapple.script.HtmlDifferTest
-ru/krt/mcapple/script/Expected.java
- ru.krt.mcapple.script.Expected
-ru/krt/mcapple/script/MyUtils.java
- ru.krt.mcapple.script.MyUtils
-ru/krt/mcapple/script/SimpleTest.java
- ru.krt.mcapple.script.SimpleTest
-ru/krt/mcapple/script/HamlTest.java
- ru.krt.mcapple.script.HamlTest
+ru/krt/copypast/hamlscript/Expected.java
+ ru.krt.copypast.hamlscript.Expected
+ru/krt/copypast/hamlscript/SimpleTest.java
+ ru.krt.copypast.hamlscript.SimpleTest
+ru/krt/copypast/hamlscript/HtmlDifferTest.java
+ ru.krt.copypast.hamlscript.HtmlDifferTest
+ru/krt/copypast/hamlscript/HamlTest.java
+ ru.krt.copypast.hamlscript.HamlTest
