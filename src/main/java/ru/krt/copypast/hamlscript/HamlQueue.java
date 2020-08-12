@@ -1,34 +1,30 @@
 package ru.krt.copypast.hamlscript;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import ru.krt.copypast.hamlscript.pojo.FileList;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Map;
 
 public class HamlQueue {
     String jsonSources;
-    HashMap<String, Object> sourcesQueue //= new HashMap<>()
-        ;
-//    Map<String,Object> sourcesQueue;
+    Map queueMap = new HashMap<>();
 
+    public Map getQueueMap() {
+        return queueMap;
+    }
+
+//    ObjectMapper mapper = new ObjectMapper();
     public HamlQueue(String hamlsSources){
         try {
             jsonSources = new String(Files.readAllBytes(Paths.get(hamlsSources)));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            FileList files = objectMapper.readValue(jsonSources, FileList.class);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
 
-        System.out.println("");
+//        queueMap = mapper.readValue(jsonSources, new TypeReference<HashMap<String, String>>(){});
+
+//        System.out.println("");
     }
+
 }

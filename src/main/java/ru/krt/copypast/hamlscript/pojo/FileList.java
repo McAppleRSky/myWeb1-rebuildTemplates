@@ -19,4 +19,12 @@ public class FileList {
     public void setHtml(String html) {
         this.html = html;
     }
+
+    public FileList(String haml, String html) {
+        this.haml = haml;
+        this.html = html;
+    }
+
+    public FileList() {
+    }
 }
