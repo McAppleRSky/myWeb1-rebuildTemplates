@@ -25,27 +25,10 @@ repositories {
 dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.12'
   testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
-// https://mvnrepository.com/artifact/org.mockito/mockito-core
-//  testCompile group: 'org.mockito', name: 'mockito-core', version: '1.10.19'
 // https://mvnrepository.com/artifact/com.coveo/nashorn-commonjs-modules
   compile group: 'com.coveo', name: 'nashorn-commonjs-modules', version: '1.0.9'
 // https://mvnrepository.com/artifact/commons-io/commons-io
   compile group: 'commons-io', name: 'commons-io', version: '2.7'
-//  classpath "com.coveo:nashorn-commonjs-modules:1.0.9'"
-// https://mvnrepository.com/artifact/org.jsoup/jsoup
-//  compile group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
-// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-//  compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
-  // https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream
-//  compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.12'
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-//  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.2'
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
-//  compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.2'
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
-//  compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.11.2'
-  // https://mvnrepository.com/artifact/com.google.code.gson/gson
-  //compile group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
 // https://mvnrepository.com/artifact/org.json/json
   compile group: 'org.json', name: 'json', version: '20200518'
 
@@ -89,3 +72,17 @@ application {
 }
 
 build.dependsOn.add(run)
+
+task execHaml(type:Exec,
+                      dependsOn: "installHtmlDiffer") {
+  workingDir 'node_modules/html-differ/bin'
+  //on linux
+  commandLine 'node_modules/html-differ/bin/html-differ', 'expected/index.htm', 'rebuild/index.html'
+
+  //store the output instead of printing to the console:
+//  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+//  ext.output = {return standardOutput.toString()}
+
+}
