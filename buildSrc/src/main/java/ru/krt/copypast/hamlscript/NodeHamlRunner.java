@@ -2,12 +2,8 @@ package ru.krt.copypast.hamlscript;
 
 import org.gradle.api.Project;
 import org.json.JSONObject;
-import ru.krt.copypadt.util.ToolFunc;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -54,8 +50,8 @@ public class NodeHamlRunner{
 //        runNashorn();
 //        TaskQueue taskQueue = new TaskQueue(mainProjectSources.getProject().getProjectDir().getPath());
 
-        try {
-            if(ToolFunc.notNull(new ProcessBuilder("bash", "-c", "").start())){
+//        try {
+//            if(ToolFunc.notNull(new ProcessBuilder("bash", "-c", "").start())){
 /*                hamlQueue(mainProjectSources
                                 .getProject().getProjectDir()
                                 .listFiles(new FilterChild(hamlInputDir))[0]
@@ -78,13 +74,11 @@ https://fooobar.com/questions/28326/how-to-combine-paths-in-java
                         Paths.get(mainProjectPath).resolve(HtmlOutputDir).toString(),
                         Paths.get(mainProjectPath, filelist));
 */
-                hamlQueue(Paths.get(mainProjectPath, hamlInputDir).toString(),
+            hamlQueue( Paths.get(mainProjectPath, hamlInputDir).toString(),
                         Paths.get(mainProjectPath, HtmlOutputDir).toString(),
-                        Paths.get(mainProjectPath, filelist));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+                        Paths.get(mainProjectPath, filelist) );
+//            }
+//        } catch (IOException e) {e.printStackTrace();}
 
         System.out.println("");
     }
@@ -108,31 +102,35 @@ https://fooobar.com/questions/28326/how-to-combine-paths-in-java
             if(!hamlFilenameKey.trim().isEmpty()){
 //                    srcHaml = new String(Files.readAllBytes(Paths.get(hamlSourcesDir+hamlFilenameKey)));
                 htmlFilenameValue = jsonObj.get(hamlFilenameKey).toString();
-//        engine.eval("load('/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/haml/lib/haml.js');");
+//        engine.eval("load('/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/hamlInputDirArg/lib/haml.js');");
 //                srcHtml = (String)((Invocable)engine).invokeFunction("process", srcHaml);
 //                srcHtml1 = srcHtml.getBytes(StandardCharsets.UTF_8);
 //                Files.write(Paths.get(HtmlOutputDir+htmlFilenameValue), srcHtml1);
-                ExternalProgramLauncher("haml",
-                        Paths.get(inputDir,hamlFilenameKey).toString(),
-                        Paths.get(outputDir,htmlFilenameValue).toString());
+                ExternalProgramLauncher(Paths.get(inputDir).toString(),"haml"
+//                        ,Paths.get(mainProjectPath, "node_modules","haml").toString() //"node_modulse/haml"
+                        ,""//Paths.get("..", "node_modules","haml").toString()
+                        ,Paths.get(inputDir,hamlFilenameKey).toString()
+                        ,Paths.get(outputDir,htmlFilenameValue).toString()
+                );
             }
         }
     }
 
-    void ExternalProgramLauncher(String program,String haml,String html){
+    void ExternalProgramLauncher(String workdir, String program, String script, String hamlInputDirArg, String htmlOutputDirArg){
         // указываем в конструкторе ProcessBuilder,
         // что нужно запустить программу ls с параметрами -l /dev
 //        ProcessBuilder procBuilder = new ProcessBuilder("ls","-l","/dev");
-        ProcessBuilder procBuilder = new ProcessBuilder(program, haml, html);
+        ProcessBuilder processBuilder = new ProcessBuilder(program, script, hamlInputDirArg, htmlOutputDirArg);
+        processBuilder.directory(new File(workdir));
 
         // перенаправляем стандартный поток ошибок на
         // стандартный вывод
-        procBuilder.redirectErrorStream(true);
+        processBuilder.redirectErrorStream(true);
 
         // запуск программы
         Process process = null;
         try {
-            process = procBuilder.start();
+            process = processBuilder.start();
         } catch (IOException e) {
             e.printStackTrace();
         }

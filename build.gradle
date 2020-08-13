@@ -40,7 +40,7 @@ node {
   download = false
 }
 
-defaultTasks 'mainTask'
+defaultTasks 'run'
 
 test{
   // never UP-TO-DATE
@@ -62,7 +62,7 @@ task installMustache(type: NpmTask, dependsOn: installHaml){
 }
 
 task installHtmlDiffer(type: NpmTask, dependsOn: installMustache){
-  args = ["install", "html-differ", "--save"]
+  args = ["install", "htmldiffer", "--save"]
 }
 
 classes.dependsOn.add(installHtmlDiffer)
@@ -74,10 +74,10 @@ application {
   mainClassName = javaMainClass
 }
 
-build.dependsOn.add(run)
+//build.dependsOn.add(run)
 
-//task execHaml(type:Exec, dependsOn: "installHtmlDiffer") {workingDir 'node_modules/html-differ/bin'
-//  commandLine 'node_modules/html-differ/bin/html-differ', 'expected/index.htm', 'rebuild/index.html'}
+//task execHaml(type:Exec, dependsOn: "installHtmlDiffer") {workingDir 'node_modules/htmlOutputDirArg-differ/bin'
+//  commandLine 'node_modules/htmlOutputDirArg-differ/bin/htmlOutputDirArg-differ', 'expected/index.htm', 'rebuild/index.htmlOutputDirArg'}
 
 
 task mainTask(type: ru.krt.copypast.hamlscript.JavaMainTaskRunner, dependsOn: build){
@@ -86,3 +86,5 @@ task mainTask(type: ru.krt.copypast.hamlscript.JavaMainTaskRunner, dependsOn: bu
 //  toActual = pathActual
 //  toExpected = pathExpected
 }
+
+run.dependsOn.add(mainTask)

@@ -1,6 +1,0 @@
-ru/krt/copypast/hamlscript/pojo/FileList.java
- ru.krt.copypast.hamlscript.pojo.FileList
-ru/krt/copypast/hamlscript/HamlQueue.java
- ru.krt.copypast.hamlscript.HamlQueue
-ru/krt/copypast/hamlscript/ExecScript.java
- ru.krt.copypast.hamlscript.ExecScript

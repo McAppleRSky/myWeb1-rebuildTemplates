@@ -15,6 +15,7 @@
   "dependencies": {
     "haml": "^0.4.3",
     "html-differ": "^1.4.0",
+    "htmldiffer": "^0.2.1",
     "mustache": "^4.0.1"
   }
 }

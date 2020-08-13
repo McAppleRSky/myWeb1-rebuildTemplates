@@ -18,14 +18,14 @@ public class envProcessBuilderTest{
     Map<String, String> env;
 
     @Test
-    public void mustacheTest(){
+    public void envProcessBuilderTest(){
         try {
-            execFromWin = new ProcessBuilder("CMD", "/C", "").start();
+            execFromWin = new ProcessBuilder("CMD", "/C", "ver").start();
         } catch (IOException e) {
             e.printStackTrace();
         }
         try {
-            execFromLin = new ProcessBuilder("bash", "-c", "").start();
+            execFromLin = new ProcessBuilder("cat", "/etc/*-release", "").start();
         } catch (IOException e) {
             e.printStackTrace();
         }
