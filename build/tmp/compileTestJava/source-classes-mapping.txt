@@ -6,3 +6,7 @@ ru/krt/copypast/hamlscript/HtmlDifferTest.java
  ru.krt.copypast.hamlscript.HtmlDifferTest
 ru/krt/copypast/hamlscript/HamlTest.java
  ru.krt.copypast.hamlscript.HamlTest
+ru/krt/copypast/util/ToolFunc.java
+ ru.krt.copypast.util.ToolFunc
+ru/krt/copypast/hamlscript/envProcessBuilderTest.java
+ ru.krt.copypast.hamlscript.envProcessBuilderTest

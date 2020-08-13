@@ -40,13 +40,17 @@ node {
   download = false
 }
 
-defaultTasks 'build'
+defaultTasks 'mainTask'
 
 test{
   // never UP-TO-DATE
 //  systemProperty "random.testing.seed", new Random().nextInt()
   // show standard out and standard error of the test JVM(s) on the console
 //  testLogging.showStandardStreams = true
+  //resources{
+  //  srcDir 'rebuild'
+  //  srcDir 'expected'
+  //}
 }
 
 task installHaml(type: NpmTask){
@@ -66,23 +70,19 @@ classes.dependsOn.add(installHtmlDiffer)
 ext {
   javaMainClass = "ru.krt.copypast.hamlscript.ExecScript"
 }
-
 application {
   mainClassName = javaMainClass
 }
 
 build.dependsOn.add(run)
 
-task execHaml(type:Exec,
-                      dependsOn: "installHtmlDiffer") {
-  workingDir 'node_modules/html-differ/bin'
-  //on linux
-  commandLine 'node_modules/html-differ/bin/html-differ', 'expected/index.htm', 'rebuild/index.html'
+//task execHaml(type:Exec, dependsOn: "installHtmlDiffer") {workingDir 'node_modules/html-differ/bin'
+//  commandLine 'node_modules/html-differ/bin/html-differ', 'expected/index.htm', 'rebuild/index.html'}
 
-  //store the output instead of printing to the console:
-//  standardOutput = new ByteArrayOutputStream()
 
-  //extension method stopTomcat.output() can be used to obtain the output:
-//  ext.output = {return standardOutput.toString()}
-
+task mainTask(type: ru.krt.copypast.hamlscript.JavaMainTaskRunner, dependsOn: build){
+//  expecteds = expected
+//  actuals = actual
+//  toActual = pathActual
+//  toExpected = pathExpected
 }
