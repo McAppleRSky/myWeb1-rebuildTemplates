@@ -1,16 +1,4 @@
-ru/krt/copypast/hamlscript/util/FilterChild.java
- ru.krt.copypast.hamlscript.util.FilterChild
-ru/krt/copypast/hamlscript/Deps.java
- ru.krt.copypast.hamlscript.Deps
-ru/krt/copypast/hamlscript/NodeHamlRunner.java
- ru.krt.copypast.hamlscript.NodeHamlRunner
-ru/krt/copypast/hamlscript/util/FilterFile.java
- ru.krt.copypast.hamlscript.util.FilterFile
-ru/krt/copypast/hamlscript/HamlQueue.java
- ru.krt.copypast.hamlscript.HamlQueue
-ru/krt/copypast/hamlscript/TaskQueue.java
- ru.krt.copypast.hamlscript.TaskQueue
-ru/krt/copypast/hamlscript/JavaMainTaskRunner.java
- ru.krt.copypast.hamlscript.JavaMainTaskRunner
-ru/krt/copypadt/util/ToolFunc.java
- ru.krt.copypadt.util.ToolFunc
+ru/krt/copypast/ruby/HamlStarter.java
+ ru.krt.copypast.ruby.HamlStarter
+ru/krt/copypast/ruby/JavaorderedTask.java
+ ru.krt.copypast.ruby.JavaorderedTask
