@@ -13,6 +13,8 @@
   "author": "mcapple <mcapple@yandex.ru>",
   "license": "ISC",
   "dependencies": {
-    "html-differ": "^1.4.0"
+    "haml": "^0.4.3",
+    "html-differ": "^1.4.0",
+    "mustache": "^4.0.1"
   }
 }

@@ -1,4 +1,4 @@
-ru/krt/copypast/ruby/HamlStarter.java
- ru.krt.copypast.ruby.HamlStarter
-ru/krt/copypast/ruby/JavaorderedTask.java
- ru.krt.copypast.ruby.JavaorderedTask
+ru/krt/copypast/htmp/ruby/JavaorderedTask.java
+ ru.krt.copypast.htmp.ruby.JavaorderedTask
+ru/krt/copypast/htmp/ruby/HamlStarter.java
+ ru.krt.copypast.htmp.ruby.HamlStarter

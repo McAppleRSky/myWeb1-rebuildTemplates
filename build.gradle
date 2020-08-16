@@ -42,20 +42,20 @@ node {
 
 defaultTasks 'run'
 
-//task installHaml(type: NpmTask){args = ["install", "haml", "--save"]}
+task installHaml(type: NpmTask){args = ["install", "haml", "--save"]}
 
-//task installMustache(type: NpmTask, dependsOn: installHaml){args = ["install", "mustache", "--save"]}
+task installMustache(type: NpmTask, dependsOn: installHaml){args = ["install", "mustache", "--save"]}
 
-task installHtmlDiffer(type: NpmTask//, dependsOn: installMustache
+task installHtmlDiffer(type: NpmTask, dependsOn: installMustache
                                     ){
   args = ["install", "html-differ", "--save"]
 }
 
 test{
   // never UP-TO-DATE
-//  systemProperty "random.testing.seed", new Random().nextInt()
+  systemProperty "random.testing.seed", new Random().nextInt()
   // show standard out and standard error of the test JVM(s) on the console
-//  testLogging.showStandardStreams = true
+  testLogging.showStandardStreams = true
   //resources{
   //  srcDir 'rebuild'
   //  srcDir 'expected'
@@ -69,7 +69,7 @@ test.dependsOn.add(installHtmlDiffer)
 //task execHaml(type:Exec, dependsOn: "installHtmlDiffer") {workingDir 'node_modules/htmlOutputDirArg-differ/bin'
 //  commandLine 'node_modules/htmlOutputDirArg-differ/bin/htmlOutputDirArg-differ', 'expected/index.htm', 'rebuild/index.htmlOutputDirArg'}
 
-task hamlTask(type: ru.krt.copypast.ruby.JavaorderedTask//, dependsOn: build
+task hamlTask(type: ru.krt.copypast.htmp.ruby.JavaorderedTask//, dependsOn: build
                                                           ){
 //  expecteds = expected
 //  actuals = actual
@@ -80,7 +80,7 @@ task hamlTask(type: ru.krt.copypast.ruby.JavaorderedTask//, dependsOn: build
 //ext {javaMainClass =}
 
 application {
-  mainClassName = "ru.krt.copypast.npm.HtmlDifferInvoker"
+  mainClassName = "ru.krt.copypast.htmp.npm.HtmlDifferInvoker"
 }
 
 run.dependsOn.add(hamlTask)
