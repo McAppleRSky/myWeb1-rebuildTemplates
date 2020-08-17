@@ -19,7 +19,13 @@ import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.regex.Pattern;
 
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+
 public class HtmlDifferInvoker {
+
+//    private static final Logger logger = LogManager.getLogger();
+
     private static
     String json = "hamlsQueue.json"
         ,htmExpectedDir = "../myWeb1/"
@@ -65,22 +71,22 @@ public class HtmlDifferInvoker {
                 ,htmlFilenameValue
                 ,srcActual = null
                 ,srcExpected = null
-                    ,string
+                ,actualFilename
                 ;
-            String[] arrayString;
+//            String[] arrayString;
 //            byte[] srcHtml1 = null;
             if(!hamlFilenameKey.trim().isEmpty()){
-//                srcHaml = new String(Files.readAllBytes(Paths.get(hamlSourcesDir+hamlFilenameKey)));
                 htmlFilenameValue = jsonObj.get(hamlFilenameKey).toString().split(Pattern.quote("."))[0];
-//        engine.eval("load('/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/haml/lib/haml.js');");
+                actualFilename = htmlFilenameValue+".html";
                 try {
                     srcActual = new String(Files.readAllBytes(Paths.get(htmExpectedDir,htmlFilenameValue+".htm")));
-                    srcExpected = new String(Files.readAllBytes(Paths.get(HtmlActualDir,htmlFilenameValue+".html")));
+                    srcExpected = new String(Files.readAllBytes(Paths.get(HtmlActualDir, actualFilename)));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+//                logger.info("FILE: " + Paths.get(HtmlActualDir,htmlFilenameValue+".html"));
                 try {
-                    invocable.invokeFunction("process" ,srcActual ,srcExpected);
+                    invocable.invokeFunction("process" ,srcActual ,srcExpected, actualFilename);
                 } catch (ScriptException e) {
                     e.printStackTrace();
                 } catch (NoSuchMethodException e) {
@@ -89,6 +95,6 @@ public class HtmlDifferInvoker {
 
             }
         }
-        System.out.println("");
+//        System.out.println("");
     }
 }
