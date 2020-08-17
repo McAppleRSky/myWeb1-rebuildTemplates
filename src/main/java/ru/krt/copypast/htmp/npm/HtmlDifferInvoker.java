@@ -44,8 +44,8 @@ public class HtmlDifferInvoker {
         engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName("nashorn");
 
         try {
-            prepareJsReader = new FileReader("src/test/javascript/prepare.js");
-            compareJsReader = new FileReader("src/test/javascript/compare.js");
+            prepareJsReader = new FileReader("src/javascript/prepare.js");
+            compareJsReader = new FileReader("src/javascript/compare.js");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

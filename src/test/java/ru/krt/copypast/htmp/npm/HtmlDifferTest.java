@@ -37,11 +37,11 @@ public class HtmlDifferTest implements Expected{
     public void simpleTest() throws ScriptException, NoSuchMethodException, FileNotFoundException {
         engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName("nashorn");
         require = Require.enable(engine, FilesystemFolder.create(new File(""), "UTF-8"));
-        engine.eval(new FileReader("src/test/javascript/prepare.js"));
+        engine.eval(new FileReader("src/javascript/prepare.js"));
 
         Invocable invocable = (Invocable)engine;
 
-        engine.eval(new FileReader("src/test/javascript/compare.js"));
+        engine.eval(new FileReader("src/javascript/compare.js"));
         assertFalse((Boolean) invocable.invokeFunction("process", expected, actual));
     }
 

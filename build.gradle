@@ -1,8 +1,4 @@
-buildscript {
-  dependencies {
-    classpath "com.github.node-gradle:gradle-node-plugin:2.2.4"
-  }
-}
+buildscript {dependencies {classpath "com.github.node-gradle:gradle-node-plugin:2.2.4"}}
 
 plugins {
   id "com.github.node-gradle.node" version "2.2.4"
@@ -31,7 +27,6 @@ dependencies {
   compile group: 'commons-io', name: 'commons-io', version: '2.7'
 // https://mvnrepository.com/artifact/org.json/json
   compile group: 'org.json', name: 'json', version: '20200518'
-
 }
 
 node {
@@ -53,9 +48,9 @@ task installHtmlDiffer(type: NpmTask, dependsOn: installMustache
 
 test{
   // never UP-TO-DATE
-  systemProperty "random.testing.seed", new Random().nextInt()
+//  systemProperty "random.testing.seed", new Random().nextInt()
   // show standard out and standard error of the test JVM(s) on the console
-  testLogging.showStandardStreams = true
+//  testLogging.showStandardStreams = true
   //resources{
   //  srcDir 'rebuild'
   //  srcDir 'expected'
@@ -69,7 +64,7 @@ test.dependsOn.add(installHtmlDiffer)
 //task execHaml(type:Exec, dependsOn: "installHtmlDiffer") {workingDir 'node_modules/htmlOutputDirArg-differ/bin'
 //  commandLine 'node_modules/htmlOutputDirArg-differ/bin/htmlOutputDirArg-differ', 'expected/index.htm', 'rebuild/index.htmlOutputDirArg'}
 
-task hamlTask(type: ru.krt.copypast.htmp.ruby.JavaorderedTask//, dependsOn: build
+task hamlTask(type: ru.krt.copypast.htmp.ruby.JavaorderedTask, dependsOn: build
                                                           ){
 //  expecteds = expected
 //  actuals = actual
@@ -84,3 +79,10 @@ application {
 }
 
 run.dependsOn.add(hamlTask)
+
+task preClean(type: Delete) {
+  delete 'node_modules', '.gradle/npm', "tmp.htm"
+  followSymlinks = true
+}
+
+clean.dependsOn.add(preClean)
