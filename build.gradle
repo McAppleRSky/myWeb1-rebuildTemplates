@@ -42,14 +42,13 @@ node {
 
 defaultTasks 'run'
 
-task installHaml(type: NpmTask){args = ["install", "haml", "--save"]}
+task installHtmlValidator (type: NpmTask){args = ["install", "html-validator", "--save"]}
 
-task installMustache(type: NpmTask, dependsOn: installHaml){args = ["install", "mustache", "--save"]}
+task installMustache(type: NpmTask, dependsOn: installHtmlValidator){args = ["install", "mustache", "--save"]}
 
-task installHtmlDiffer(type: NpmTask, dependsOn: installMustache
-                                    ){
-  args = ["install", "html-differ", "--save"]
-}
+task installHaml(type: NpmTask, dependsOn: installMustache){args = ["install", "haml", "--save"]}
+
+task installHtmlDiffer(type: NpmTask, dependsOn: installHaml){args = ["install", "html-differ", "--save"]}
 
 test{
   // never UP-TO-DATE
