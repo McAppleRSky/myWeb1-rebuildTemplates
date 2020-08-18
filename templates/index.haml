@@ -4,13 +4,89 @@
 		= Haml::Engine.new(File.read("head.haml")).render
 		:javascript
 			var htmPage = "index"; // Главная страница
-		%title Title
+			$(function(){
+				$('#li-menu0').children().first().attr('href', '#');
+				$('.tdMenu10').first().empty();
+				$('.tdMenu10').last().children().attr('href','page1.htm');
+			});
+		%title
+			Мой персональный Веб-сайт
 	%body
 		%header
 			= Haml::Engine.new(File.read("nav.haml")).render
+			%figure
+				%img(src="img/normal.jpg" alt="фотография Борисова Е.А.")
+				%figcaption#idFigcaptionHeader
+					фотография
+			%h1
+				Персональный сайт
+		%section#boderSection
 		%aside
 			= Haml::Engine.new(File.read("aside.haml")).render
 		%main
 			%article
+				%h2
+					Личные данные
+				%br
+				%dl
+					%dt
+						Имя:
+					%dd
+						Борисов Евгений Александрович
+						%br
+					%dt
+						студент СевГУ группы:
+					%dd
+						а31з
+						%br
+					%dt
+						Номер и название работы:
+						Контрольная работа по дисциплине: «Веб-технологии»;
+					%dd
+						%ol
+							%li
+								Задание № 1 Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS;
+							%li
+								Задание № 2 Исследование возможностей программирования на стороне клиента. Основы языка JavaScript;
+							%li
+								Задание № 3 Исследование объектной модели документа (DOM) и системы событий JavaScript;
+							%li
+								Задание № 4 Исследование возможностей библиотеки jQuery;
+							%li
+								Задание № 5 Исследование возможностей ускорения разработки веб-приложений с использованием HAML;
+							%li
+								Задание № 6 Исследование возможностей ускорения разработки клиентских приложений с использованием SASS;
+							%li
+								Задание № 7 Исследование возможностей ускорения разработки клиентских приложений с использованием CoffeeScript.
+			%nav
+				%h2
+					Страницы сайта
+				%p
+					Гиперссылки на страницы сайта:
+				%ul
+					%li
+						%a(href="page1.htm")
+							Обо мне
+					%li
+						%a(href="page2.htm")
+							Мои интересы
+					%li
+						%a(href="page3.htm")
+							Учеба
+					%li
+						%a(href="page4.htm")
+							Фотоальбом
+					%li
+						%a(href="page5.htm")
+							Контакт
+					%li
+						%a(href="page6.htm")
+							Тест по дисциплине "Безопасность жизнедеятельности"
+			%div
+				%p
+					Сам погибай, а систему
+					= succeed "." do
+						%em
+							выключай
 		%footer
 			= Haml::Engine.new(File.read("footer.haml")).render

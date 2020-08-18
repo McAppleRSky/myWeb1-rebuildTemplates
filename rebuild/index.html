@@ -17,8 +17,15 @@
 
 <script>
   var htmPage = "index"; // Главная страница
+  $(function(){
+  	$('#li-menu0').children().first().attr('href', '#');
+  	$('.tdMenu10').first().empty();
+  	$('.tdMenu10').last().children().attr('href','page1.htm');
+  });
 </script>
-<title>Title</title>
+<title>
+Мой персональный Веб-сайт
+</title>
 </head>
 <body>
 <header>
@@ -28,41 +35,57 @@
 <li id='li-menu0' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
 <a href='index.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
-Главная<br>страница
+Главная
+<br>
+страница
 </a>
 <ul>
 <li class='li-menu1'>
-<a href='#'>Обо мне</a>
+<a href='page1.htm'>
+Обо мне
+</a>
 </li>
-<li class='li-menu2'></li>
-</ul>
-<a href='page2.htm'></a>
-Мои<br>интересы
+<li class='li-menu2'>
+<a href='page2.htm'>
+Мои
+<br>
+интересы
+</a>
 </li>
 <li class='li-menu3'>
-<a href='page3.htm'>Учеба</a>
+<a href='page3.htm'>
+Учеба
+</a>
 </li>
 <li class='li-menu4'>
-<a href='page4.htm'>Фотоальбом</a>
+<a href='page4.htm'>
+Фотоальбом
+</a>
 </li>
 <li class='li-menu5'>
-<a href='page5.htm'>Контакты</a>
+<a href='page5.htm'>
+Контакты
+</a>
 </li>
 <li class='li-menu6'>
-<a href='page6.htm'></a>
+<a href='page6.htm'>
 Тест<br>по дисциплине
+</a>
 </li>
 </ul>
+</li>
 <li class='li-menu1' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page1.htm'></a>
+<a href='page1.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Обо мне
+</a>
 </li>
 <li class='li-menu2' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page2.htm'></a>
+<a href='page2.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Мои<br>интересы
-<ul></ul>
+</a>
+<ul>
 <li>
 <a href='page2.htm#page2-1'>Мое хобби</a>
 </li>
@@ -78,30 +101,46 @@
 <li>
 <a href='page2.htm#page2-5'>Мои любимые фильмы</a>
 </li>
+</ul>
 </li>
 <li class='li-menu3' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page3.htm'></a>
+<a href='page3.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Учеба
+</a>
 </li>
 <li class='li-menu4' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page4.htm'></a>
+<a href='page4.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Фотоальбом
+</a>
 </li>
 <li class='li-menu5' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page5.htm'></a>
+<a href='page5.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Контакты
+</a>
 </li>
 <li class='li-menu6' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page6.htm'></a>
+<a href='page6.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Тест<br>по дисциплине
+</a>
 </li>
+</ul>
 </nav>
 
+<figure>
+<img alt='фотография Борисова Е.А.' src='img/normal.jpg'>
+<figcaption id='idFigcaptionHeader'>
+фотография
+</figcaption>
+</figure>
+<h1>
+Персональный сайт
+</h1>
 </header>
+<section id='boderSection'></section>
 <aside>
 <h3>здесь могла быть ваша реклама:</h3>
 <section>
@@ -122,23 +161,129 @@
 
 </aside>
 <main>
-<article></article>
+<article>
+<h2>
+Личные данные
+</h2>
+<br>
+<dl>
+<dt>
+Имя:
+</dt>
+<dd>
+Борисов Евгений Александрович
+<br>
+</dd>
+<dt>
+студент СевГУ группы:
+</dt>
+<dd>
+а31з
+<br>
+</dd>
+<dt>
+Номер и название работы:
+Контрольная работа по дисциплине: «Веб-технологии»;
+</dt>
+<dd>
+<ol>
+<li>
+Задание № 1 Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS;
+</li>
+<li>
+Задание № 2 Исследование возможностей программирования на стороне клиента. Основы языка JavaScript;
+</li>
+<li>
+Задание № 3 Исследование объектной модели документа (DOM) и системы событий JavaScript;
+</li>
+<li>
+Задание № 4 Исследование возможностей библиотеки jQuery;
+</li>
+<li>
+Задание № 5 Исследование возможностей ускорения разработки веб-приложений с использованием HAML;
+</li>
+<li>
+Задание № 6 Исследование возможностей ускорения разработки клиентских приложений с использованием SASS;
+</li>
+<li>
+Задание № 7 Исследование возможностей ускорения разработки клиентских приложений с использованием CoffeeScript.
+</li>
+</ol>
+</dd>
+</dl>
+</article>
+<nav>
+<h2>
+Страницы сайта
+</h2>
+<p>
+Гиперссылки на страницы сайта:
+</p>
+<ul>
+<li>
+<a href='page1.htm'>
+Обо мне
+</a>
+</li>
+<li>
+<a href='page2.htm'>
+Мои интересы
+</a>
+</li>
+<li>
+<a href='page3.htm'>
+Учеба
+</a>
+</li>
+<li>
+<a href='page4.htm'>
+Фотоальбом
+</a>
+</li>
+<li>
+<a href='page5.htm'>
+Контакт
+</a>
+</li>
+<li>
+<a href='page6.htm'>
+Тест по дисциплине "Безопасность жизнедеятельности"
+</a>
+</li>
+</ul>
+</nav>
+<div>
+<p>
+Сам погибай, а систему
+<em>
+выключай
+</em>.
+</p>
+</div>
 </main>
-<footer>
 <footer>
 <table class='fullTableMenu'>
 <tr>
 <td class='tdMenu10'>
-&lt;<a href='index.htm'>prev</a>&gt;
+&lt;
+<a>
+prev
+</a>
+&gt;
 </td>
 <td id='tdMenu80'></td>
 <td class='tdMenu10'>
-&lt;<a href='page2.htm'>next</a>&gt;
+&lt;
+<a>
+next
+</a>
+&gt;
 </td>
 </tr>
 </table>
 ®
-<time datetime='2019-11-13'>13.11.19 г.</time>,
+<time datetime='2019-11-13'>13.11.19 г.</time>
+, Борисов Е.А. Все права защищены. © Копирование запрещено
 <br>
 Автор:
 <a href='mailto:mcapple@yandex.ru'>Е.Борисов</a>
@@ -154,7 +299,6 @@
 </td>
 </tr>
 </table>
-</footer>
 
 </footer>
 </body>
