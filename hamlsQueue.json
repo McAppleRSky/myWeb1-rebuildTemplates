@@ -1,4 +1,4 @@
 {
 	"index.haml" : "index.html"
-	,"" : "page1.html"
+	,"page1.haml" : "page1.html"
 }

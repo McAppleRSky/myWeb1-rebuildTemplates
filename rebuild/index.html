@@ -5,7 +5,6 @@
 <link href='favicon.ico' rel='shortcut icon'>
 <link href='css/main.css' rel='stylesheet' type='text/css'>
 <link href='css/top-menu-1-common.css' rel='stylesheet' type='text/css'>
-<link href='css/top-menu-page0.css' rel='stylesheet' type='text/css'>
 <link href='css/top-menu-1-hover.css' rel='stylesheet' type='text/css'>
 <link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
 <link href='css/postmaster.css' rel='stylesheet' type='text/css'>
@@ -15,10 +14,11 @@
 <script charset='utf-8' src='js/pageCounter.js'></script>
 <script charset='utf-8' src='js/jquery-1.12.4.js'></script>
 
+<link href='css/top-menu-page0.css' rel='stylesheet' type='text/css'>
 <script>
   var htmPage = "index"; // Главная страница
   $(function(){
-  	$('#li-menu0').children().first().attr('href', '#');
+  	$('#li-menu0').children().first().attr('href','#');
   	$('.tdMenu10').first().empty();
   	$('.tdMenu10').last().children().attr('href','page1.htm');
   });
@@ -139,6 +139,7 @@
 <h1>
 Персональный сайт
 </h1>
+
 </header>
 <section id='boderSection'></section>
 <aside>

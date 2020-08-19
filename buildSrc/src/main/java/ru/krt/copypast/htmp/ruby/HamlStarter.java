@@ -104,7 +104,8 @@ https://fooobar.com/questions/28326/how-to-combine-paths-in-java
                     ;
 //            byte[] srcHtml1 = null;
             if(!hamlFilenameKey.trim().isEmpty()){
-//                    srcHaml = new String(Files.readAllBytes(Paths.get(hamlSourcesDir+hamlFilenameKey)));
+                System.out.println("Compile : "+hamlFilenameKey);
+                //                    srcHaml = new String(Files.readAllBytes(Paths.get(hamlSourcesDir+hamlFilenameKey)));
                 htmlFilenameValue = jsonObj.get(hamlFilenameKey).toString();
 //        engine.eval("load('/mnt/d/projects/myWeb1-rebuildTemplates/node_modules/hamlInputDirArg/lib/haml.js');");
 //                srcHtml = (String)((Invocable)engine).invokeFunction("process", srcHaml);

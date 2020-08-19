@@ -5,19 +5,27 @@
 <link href='favicon.ico' rel='shortcut icon'>
 <link href='css/main.css' rel='stylesheet' type='text/css'>
 <link href='css/top-menu-1-common.css' rel='stylesheet' type='text/css'>
-<link href='css/top-menu-page0.css' rel='stylesheet' type='text/css'>
 <link href='css/top-menu-1-hover.css' rel='stylesheet' type='text/css'>
 <link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
 <link href='css/postmaster.css' rel='stylesheet' type='text/css'>
-<script charset='utf-8' src='js/jquery-1.12.4.js'></script>
+<style media='screen'></style>
 <script charset='utf-8' src='js/gettime.js'></script>
 <script charset='utf-8' src='js/cookieHandler.js'></script>
 <script charset='utf-8' src='js/pageCounter.js'></script>
+<script charset='utf-8' src='js/jquery-1.12.4.js'></script>
 
-<title>Title</title>
+<link href='css/top-menu-page1.css' rel='stylesheet' type='text/css'>
 <script>
-  var htmPage = "";
+  var htmPage = "page1"; //Обо мне
+  $(function(){
+  	$('.li-menu0').children().attr('href','#');
+  	$('.tdMenu10').first().children().attr('href','index.htm');
+  	$('.tdMenu10').last().children().attr('href','page2.htm');
+  });
 </script>
+<title>
+Мой персональный Веб-сайт
+</title>
 </head>
 <body>
 <header>
@@ -27,41 +35,57 @@
 <li id='li-menu0' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
 <a href='index.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
-Главная<br>страница
+Главная
+<br>
+страница
 </a>
 <ul>
 <li class='li-menu1'>
-<a href='#'>Обо мне</a>
+<a href='page1.htm'>
+Обо мне
+</a>
 </li>
-<li class='li-menu2'></li>
-</ul>
-<a href='page2.htm'></a>
-Мои<br>интересы
+<li class='li-menu2'>
+<a href='page2.htm'>
+Мои
+<br>
+интересы
+</a>
 </li>
 <li class='li-menu3'>
-<a href='page3.htm'>Учеба</a>
+<a href='page3.htm'>
+Учеба
+</a>
 </li>
 <li class='li-menu4'>
-<a href='page4.htm'>Фотоальбом</a>
+<a href='page4.htm'>
+Фотоальбом
+</a>
 </li>
 <li class='li-menu5'>
-<a href='page5.htm'>Контакты</a>
+<a href='page5.htm'>
+Контакты
+</a>
 </li>
 <li class='li-menu6'>
-<a href='page6.htm'></a>
+<a href='page6.htm'>
 Тест<br>по дисциплине
+</a>
 </li>
 </ul>
+</li>
 <li class='li-menu1' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page1.htm'></a>
+<a href='page1.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Обо мне
+</a>
 </li>
 <li class='li-menu2' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page2.htm'></a>
+<a href='page2.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Мои<br>интересы
-<ul></ul>
+</a>
+<ul>
 <li>
 <a href='page2.htm#page2-1'>Мое хобби</a>
 </li>
@@ -77,28 +101,44 @@
 <li>
 <a href='page2.htm#page2-5'>Мои любимые фильмы</a>
 </li>
+</ul>
 </li>
 <li class='li-menu3' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page3.htm'></a>
+<a href='page3.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Учеба
+</a>
 </li>
 <li class='li-menu4' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page4.htm'></a>
+<a href='page4.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Фотоальбом
+</a>
 </li>
 <li class='li-menu5' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page5.htm'></a>
+<a href='page5.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Контакты
+</a>
 </li>
 <li class='li-menu6' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
-<a href='page6.htm'></a>
+<a href='page6.htm'>
 <img alt='' class='li-menu-img' src='img/icon/caret.png'>
 Тест<br>по дисциплине
+</a>
 </li>
+</ul>
 </nav>
+
+<figure>
+<img alt='фотография Борисова Е.А.' src='img/normal.jpg'>
+<figcaption id='idFigcaptionHeader'>
+фотография
+</figcaption>
+</figure>
+<h1>
+Персональный сайт
+</h1>
 
 </header>
 <aside>
@@ -121,23 +161,88 @@
 
 </aside>
 <main>
-<article></article>
+<article>
+<h3>
+Автобиография
+</h3>
+<pre> 	Я, Борисов Евгений Александрович, 23.09.1981 г.р., родился
+в г. Симферополь, УССР. Гражданин Российской Федерации.
+ 	Родители: отец - Борисов Александр Геннадьевич, 08.06.1961 г.р.,
+пенсионер; мать — Борисова Ирина Анатольевна, 02.02.1961 г.р., пенсионер;
+ 	брат — Борисов Вячеслав Александрович, 26.08.1982 г.р.,
+предприниматель.
+ 	Супруга — Борисова Мария Николаевна, 25.07.1986 г.р., администратор
+ГУП РК «Крымавтотранс».
+ 	Дети: сын — Борисов Александр Евгеньевич, 25.01.2008 г.р., дочь —
+Борисова Виктория Евгеньевна. Учатся в МБОУ СОШ № 40 им. Скугаря,
+г. Симферополь.
+ 	В 1998 г. окончил школу гимназию № 1 им. Ушинского, г. Симферополь
+и поступил на дневное отделение в Крымский институт экономики
+и хозяйственного права, г. Симферополь.
+ 	В 1999 г. прошел водительские курсы в автошколе ОСОУ (ДОСААФ),
+получил водительское удостоверение категории B, C.
+ 	В 2000 г. и был принят на работу водителем ЧП «Закат», г. Симферополь.
+В 2001 г. переведен на должность экономиста ЧП «Закат».
+По совместительству работал администратором интернет-клуба «Импульс»
+ООО «Дети Крыма».
+ 	В 2002 г. получил диплом бакалавра по специальности экономика
+предпринимательства. Переведен на должность начальника отдела экономики
+и планирования ЧП «Закат».
+ 	В 2003 г. завершил обучение в  Крымском институте экономики
+и хозяйственного права, получил диплом специалиста по специальности
+экономика предприятия. Поступил и был зачислен слушателем на дневное
+отделение в Одесский региональный институт Национальной академии
+государственного управления при Президенте Украины. Прошел
+производственную практику в Министерстве промышленной политики,
+транспорта и связи Автономной Республики Крым.
+ 	В 2005 г.  завершил обучение в региональном институте Национальной
+академии государственного управления при Президенте Украины, защитил
+диплом по теме «Информационные системы в экономике», получил диплом
+магистра государственного управления. Был принят на государственную
+службу. Работал на должностях главного специалиста отдела благоустройства
+отдела благоустройства, коммунального обслуживания, капитального
+строительства, жилищной политики Республиканского комитета по жилищно-
+коммунальному хозяйству, Министерства архитектуры, капитального
+строительства и жилищно-коммунального хозяйства Автономной Республики
+Крым.
+ 	В 2011 г. переведен в Инспекцию благоустройства города Севастопольского
+городского Совета, но принят начальником КУ «Хоз.группа» по обслуживанию
+учреждений образования Нахимовского района г. Севастополя,
+а после — заместителем главного врача по техническим вопросам
+КЗ «Городская больница № 3 им. Даши Севастопольской».
+ 	В 2015 г. принят на государственную гражданскую службу города
+Севастополя, назначен начальником отдела аренды Департамента
+по имущественным и земельным отношениям города Севастополя.
+ 	В 2019 г. назначен главным специалистом отдела государственных программ
+социально-экономического планирования Департамента экономического
+развития города Севастополя. Уволен с государственной службы города
+Севастополя. Принят инженером проектировщиком отдела проектирования
+и тестирования КР ЦОД ГУП РК «Крымтехнологии».</pre>
+</article>
 </main>
-<footer>
 <footer>
 <table class='fullTableMenu'>
 <tr>
 <td class='tdMenu10'>
-&lt;<a href='index.htm'>prev</a>&gt;
+&lt;
+<a>
+prev
+</a>
+&gt;
 </td>
 <td id='tdMenu80'></td>
 <td class='tdMenu10'>
-&lt;<a href='page2.htm'>next</a>&gt;
+&lt;
+<a>
+next
+</a>
+&gt;
 </td>
 </tr>
 </table>
 ®
-<time datetime='2019-11-13'>13.11.19 г.</time>,
+<time datetime='2019-11-13'>13.11.19 г.</time>
+, Борисов Е.А. Все права защищены. © Копирование запрещено
 <br>
 Автор:
 <a href='mailto:mcapple@yandex.ru'>Е.Борисов</a>
@@ -153,7 +258,6 @@
 </td>
 </tr>
 </table>
-</footer>
 
 </footer>
 </body>

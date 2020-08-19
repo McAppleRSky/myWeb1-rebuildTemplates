@@ -2,10 +2,11 @@
 %html(lang="ru")
 	%head
 		= Haml::Engine.new(File.read("head.haml")).render
+		%link(href="css/top-menu-page0.css" rel="stylesheet" type="text/css")
 		:javascript
 			var htmPage = "index"; // Главная страница
 			$(function(){
-				$('#li-menu0').children().first().attr('href', '#');
+				$('#li-menu0').children().first().attr('href','#');
 				$('.tdMenu10').first().empty();
 				$('.tdMenu10').last().children().attr('href','page1.htm');
 			});
@@ -14,12 +15,7 @@
 	%body
 		%header
 			= Haml::Engine.new(File.read("nav.haml")).render
-			%figure
-				%img(src="img/normal.jpg" alt="фотография Борисова Е.А.")
-				%figcaption#idFigcaptionHeader
-					фотография
-			%h1
-				Персональный сайт
+			= Haml::Engine.new(File.read("figure-h1.haml")).render
 		%section#boderSection
 		%aside
 			= Haml::Engine.new(File.read("aside.haml")).render
