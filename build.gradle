@@ -42,7 +42,7 @@ node {
 
 defaultTasks 'run'
 
-task installHtmlValidator (type: NpmTask){args = ["install", "html-validator", "--save"]}
+task installHtmlValidator (type: NpmTask){args = ["install", "html-validator-cli", "--save"]}
 
 task installMustache(type: NpmTask, dependsOn: installHtmlValidator){args = ["install", "mustache", "--save"]}
 

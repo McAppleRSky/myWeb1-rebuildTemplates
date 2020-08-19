@@ -92,9 +92,8 @@ public class HtmlDifferInvoker {
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
                 }
-
+                HtmlValidator htmlValidator = new HtmlValidator(HtmlActualDir+ actualFilename);
             }
         }
-//        System.out.println("");
     }
 }
