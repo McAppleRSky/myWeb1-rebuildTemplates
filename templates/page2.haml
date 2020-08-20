@@ -1,0 +1,147 @@
+!!!
+%html{:lang => "ru"}
+	%head
+		%link(href="css/top-menu-page2.css" rel="stylesheet" type="text/css")
+		= Haml::Engine.new(File.read("head.haml")).render
+		%script(charset="utf-8" src="js/page2handler.js")
+		:javascript
+			var htmPage = "page2"; //Мои интересы
+			$(function(){
+				$('.li-menu2').children().attr('href','#');
+				$('.tdMenu10').first().children().attr('href','page1.htm');
+				$('.tdMenu10').last().children().attr('href','page3.htm');
+			});
+		%title
+			Мой персональный Веб-сайт
+	%body
+		%header
+			= Haml::Engine.new(File.read("nav.haml")).render
+			= Haml::Engine.new(File.read("figure-h1.haml")).render
+		%aside
+			= Haml::Engine.new(File.read("aside.haml")).render
+		%main
+			%nav
+				%h2
+					личный сайт
+				%p
+					Содержание страницы:
+				%dl
+					%dt Хобби - есть хобби
+					%dd
+						%a(href="#page2-1")
+							Мое хобби
+						;
+					%dt
+						Поскролить
+					%dd
+						%a(href="#page2-2")
+							Мои любимые сайты
+						;
+					%dt
+						Почитать
+					%dd
+						%a(href="#page2-3")
+							Мои любимые книги
+						;
+					%dt
+						Послушать
+					%dd
+						%a(href="#page2-4")
+							Моя любимая музыка
+						;
+					%dt
+						Посмотреть
+					%dd
+						= succeed "." do
+							%a(href="#page2-5")
+								Мои любимые фильмы
+			%article
+				%section
+					%h2#page2-1
+						Мое хобби
+					%p
+						Гиперссылки на страницы сайта
+						%p
+							:plain
+								Демонстрация испоьзования javascript функции с переменным количеством аргументов для формирования HTML списков.
+				%section
+					%h2#page2-2
+						Мои любимые сайты:
+					%ul
+						%li
+							%a(href="https://developer.mozilla.org/ru/")
+								Web документация Mozilla;
+						%li
+							%a(href="https://www.w3.org/TR/html50/")
+								HTML5. A vocabulary and associated APIs for HTML;
+						%li
+							%a(href="https://jquery-docs.ru")
+								jQuery на русском
+						%li
+							%a(href="https://bootstrap-4.ru/")
+								Bootstrap. Документация на русском языке;
+						%li
+							%a(href="https://webformyself.com/css-psevdoklassy-stilizaciya-polej-form-po-vvedennym-dannym/")
+								CSS псевдоклассы: стилизация полей форм по введенным данным;
+						%li
+							%a(href="https://apps.eky.hk/css-triangle-generator/")
+								CSS triangle generator
+						%li
+							%a(href="http://javascript.ru/manual")
+								Справочник javascript;
+						%li
+							%a(href="https://tools.dynamicdrive.com/favicon/")
+								Favorite icon generator
+						%li
+							%a(href="http://www.xiper.net/scripts/cusel/")
+								Выпадающие списки без select
+						%li
+							%a(href="http://vesti.ru/")
+								Вести 24 vesti.ru;
+						%li
+							%a(href="http://ukr.net/")
+								Новостной портал ukr.net;
+						%li
+							%a(href="http://pressa.tv/")
+								Подборка новостного медиа контента pressa.tv;
+						%li
+							%a(href="http://youtube.ru/")
+								Видеохостинг youtube.com .
+				%section
+					%h2#page2-3
+						Мои любимые книги:
+					:javascript
+						list("O",
+						"Методические указания к лабораторным работам по дисциплине «Веб-технологии» для студентов дневной и заочной форм обучения направлений 09.03.02 – «Информационные системы и технологии» и 09.03.03 – «Прикладная информатика», часть 1/Сост. А.Л.Овчинников, Д.В. Степаненко, А.К. Забаштанский. – Севастополь: Изд-во СевГУ, 2019. – 129 с.;",
+						"HTML5. CSS3 и JavaScript. Исчерпывающее руководство / Джен-нифер Роббинс; [пер.с англ. М.А.Райтман]. - 4-е издание. - М.: Эксмо, 2014. - 528 с.;", "Погружение в HTML: перев.с англ. - Спб.: БХВ-Петербург, 2011. - 304 с.",
+						"Новая большая книга CSS. - Спб.: Питер, 2016. - 720 с.;", "CSS — каскадные таблицы стилей. Подробное руководство, 3-е издание. - пер.с. англ."
+						)
+				%section
+					%h2#page2-4 Моя любимая музыка
+					%p
+						Группа &ldquo;
+						%em
+							Ленинград
+						&rdquo; С.Шнурова.
+				%section
+					%h2#page2-5
+						Мои любимые фильмы
+					%p
+						Фильм
+						= succeed "." do
+							%em
+								&ldquo;Фонтан&rdquo;
+			%section
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+		%footer
+			= Haml::Engine.new(File.read("footer.haml")).render
