@@ -1,0 +1,114 @@
+!!!
+%html(lang="ru")
+	%head
+		%link(href="css/top-menu-page3.css" rel="stylesheet" type="text/css")
+		= Haml::Engine.new(File.read("head.haml")).render
+		%link(href="css/page3.css" rel="stylesheet" type="text/css")
+		:javascript
+			var htmPage = "page3"; // Учеба
+			$(function(){
+				$('.li-menu3').children().attr('href','#');
+				$('.tdMenu10').first().children().attr('href','page2.htm');
+				$('.tdMenu10').last().children().attr('href','page4.htm');
+			});
+		%title
+			Мой персональный Веб-сайт
+	%body
+		%header
+			= Haml::Engine.new(File.read("nav.haml")).render
+			= Haml::Engine.new(File.read("figure-h1.haml")).render
+		%aside
+			= Haml::Engine.new(File.read("aside.haml")).render
+		%main
+			%article
+				%section
+					%h3#h3Uppercase Севстопольский государственный университет
+					%h3 Кафедра информационных технологий
+				%section
+					%figure
+						%figcaption
+							%strong Перечень изучаемых дисциплин
+						%table.mainTable
+							%caption Дисциплины по семестрам
+							%tr
+								%th № п/п
+								%th Наименование предмета
+								%th Тест
+							%tr
+								%td.field-colspan(colspan="2") 1 курс
+							%tr
+								%td 1.
+								%td Веб-технологии
+								%td
+									%a(href="page6.htm") пройти тест
+							%tr
+								%td 2.
+								%td Платформа Java
+							%tr
+								%td 3.
+								%td
+							%tr
+								%td 4.
+								%td
+							%tr
+								%td 5.
+								%td
+							%tr
+								%td 6.
+								%td
+							%tr
+								%td 7.
+								%td
+							%tr
+								%td 8.
+								%td
+							%tr
+								%td 9.
+								%td
+							%tr
+								%td 10.
+								%td
+							%tr
+								%td 11.
+								%td
+							%tr
+								%td 12.
+								%td
+							%tr
+								%td 13.
+								%td
+							%tr
+								%td 14.
+								%td
+							%tr
+								%td 15.
+								%td
+							%tr
+								%td 16.
+								%td
+			%section
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+			%section
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+				%br
+		%footer
+			= Haml::Engine.new(File.read("footer.haml")).render
