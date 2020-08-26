@@ -1,4 +1,0 @@
-ru/krt/copypast/htmp/npm/HtmlValidator.java
- ru.krt.copypast.htmp.npm.HtmlValidator
-ru/krt/copypast/htmp/npm/HtmlDifferInvoker.java
- ru.krt.copypast.htmp.npm.HtmlDifferInvoker
