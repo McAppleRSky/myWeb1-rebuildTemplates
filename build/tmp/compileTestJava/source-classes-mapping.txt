@@ -1,0 +1,16 @@
+ru/krt/copypast/htmp/npm/HtmlDifferTest.java
+ ru.krt.copypast.htmp.npm.HtmlDifferTest
+ru/krt/copypast/util/FilterFile.java
+ ru.krt.copypast.util.FilterFile
+ru/krt/copypast/htmp/npm/Expected.java
+ ru.krt.copypast.htmp.npm.Expected
+ru/krt/copypast/util/ToolFunc.java
+ ru.krt.copypast.util.ToolFunc
+ru/krt/copypast/htmp/npm/HamlTest.java
+ ru.krt.copypast.htmp.npm.HamlTest
+ru/krt/copypast/htmp/npm/SimpleTest.java
+ ru.krt.copypast.htmp.npm.SimpleTest
+ru/krt/copypast/htmp/EnviromentTest.java
+ ru.krt.copypast.htmp.EnviromentTest
+ru/krt/copypast/util/FilterChild.java
+ ru.krt.copypast.util.FilterChild

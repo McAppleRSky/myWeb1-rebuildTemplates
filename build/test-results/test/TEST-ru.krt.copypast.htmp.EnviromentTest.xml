@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.krt.copypast.htmp.EnviromentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-08-24T06:33:29" hostname="e.borisov.dc.rk" time="1.417">
+  <properties/>
+  <testcase name="envRubyHamlTest" classname="ru.krt.copypast.htmp.EnviromentTest" time="0.256"/>
+  <testcase name="envNpmHtmlValidatorTest" classname="ru.krt.copypast.htmp.EnviromentTest" time="1.161"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

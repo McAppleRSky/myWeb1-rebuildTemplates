@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.krt.copypast.htmp.npm.SimpleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-24T06:33:32" hostname="e.borisov.dc.rk" time="0.577">
+  <properties/>
+  <testcase name="mustacheTest" classname="ru.krt.copypast.htmp.npm.SimpleTest" time="0.577"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Warning: Nashorn engine is planned to be removed from a future JDK release
+]]></system-err>
+</testsuite>
