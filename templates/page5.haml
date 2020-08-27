@@ -1,0 +1,183 @@
+!!!
+%html(lang="ru")
+	%head
+		= Haml::Engine.new(File.read("head.haml")).render
+		%meta(name="viewport" content="width=device-width, initial-scale=1")
+		%link(href="css/top-menu-page5.css" rel="stylesheet" type="text/css")
+		%link(href="css/page5DefaultFormStyle.css" rel="stylesheet" type="text/css")
+		%link(href="css/birthday-date-panel.css" rel="stylesheet" type="text/css")
+		%link(href="css/page5valid.css" rel="stylesheet" type="text/css")
+		%script(src="js/bootstrap.js" charset="utf-8")
+		%script(src="js/popover.js" charset="utf-8")
+		%script(src="js/calenderElement.js" charset="utf-8")
+		%script(src="js/page5valid.js" charset="utf-8")
+		:javascript
+			var htmPage = "page5"; // Контакты
+			$(function(){
+				$('.li-menu5').children().attr('href','#');
+				$('.tdMenu10').first().children().attr('href','page4.htm');
+				$('.tdMenu10').last().children().attr('href','page6.htm');
+			});
+		%title Мой персональный Веб-сайт
+	%body
+		%header
+			= Haml::Engine.new(File.read("nav.haml")).render
+			= Haml::Engine.new(File.read("figure-h1.haml")).render
+		%aside
+			= Haml::Engine.new(File.read("aside.haml")).render
+		%main
+			%section
+				%h2 Контакты со мной
+				%p Контакты со мной возможны по электронной почте, популярными мессенджерами, на домашний адрес:
+			%article
+				%section
+					%figure
+						%figcaption
+							%h2 Форма отправки &lt;/figure&gt; сообщения
+					#MessageFormSubmitedMessage
+						%p Сообщение отправлена (Form Submited)
+					%form#messageForm(accept-charset="utf-8" action="mailto:mcapple@yandex.ru" enctype="text/plain" method="post" onsubmit="validMessageForm();")
+						Для отправки сообщения на мой личный почтоый ящик:
+						%ol
+							%li
+								Введите для сообщения Фамилию Имя Отчество
+								%br
+								%label(for="text1") Вас зовут:
+								%br
+								%input#text1(name="familyNameSurname" size="63" type="text" value="Фамилия Имя Отчество")
+								#valid01.InvalidMessage
+									%br
+									поле ФИО должно быть заполнено
+								#valid02.InvalidMessage
+									%br
+									поле ФИО не может быть заполнено пробелом
+								#valid03.InvalidMessage
+									%br
+									поле ФИО не может начинаться с пробела
+								#valid04.InvalidMessage
+									%br
+									поле ФИО не может быть заполнено словами Фамилия Имя Отчество
+								#valid05.InvalidMessage
+									%br
+									Необходимо заполнить Фамилию Имя Отчество (зполнено менее 3 слов)
+								#valid06.InvalidMessage
+									%br
+									Необходимо заполнить Фамилию Имя Отчество (зполнено более 3 слов)
+								%br.PrevalidMessage
+								%br
+							%li
+								%label Пол:
+								%br
+								%span#genderOutline
+									%label(for="radio1") мужской
+									%input#radio1(name="gender" type="radio" value="male")
+									%label(for="radio2") женский
+									%input#radio2(name="gender" type="radio" value="famale")
+								%br
+								#valid11.InvalidMessage
+									пол не выбран
+								%br.PrevalidMessage
+								%br
+							%li
+								Укажите Ваш телефон
+								%br
+								%label(for="text2") Ваш телефон (без разделителей):
+								%br
+								%input#text2(name="telef" size="63" type="text" value="+7978")
+								#valid20.InvalidMessage
+									%br
+									Телефон заполнен не верно
+								#valid201.InvalidMessage
+									%br
+									Номер телефона можно вводить от 9 до 11 цифр (на +3 и +7)
+								%br.PrevalidMessage
+								%br
+							%li
+								Укажите Ваш адрес электронной почты
+								%br
+								%label(for="text3") Ваш Email:
+								%br
+								%input#text3(name="mail" size="63" type="text" value="name@domain")
+								#valid21.InvalidMessage
+									%br
+									Email заполнен не верно
+								%br.PrevalidMessage
+								%br
+							%li
+								Напишите сообщение.
+								%br
+								%label(for="text4") Ввести сообщение здесь:
+								%br
+								%input#text4(name="message" size="63" type="text" value="текст сообщения")
+								#valid31.InvalidMessage
+									%br
+									сообщение не может быть пустое
+								#valid32.InvalidMessage
+									%br
+									Текст сообщения - неприемлемые слова, изложите суть сообщения для отправки
+								%br.PrevalidMessage
+								%br
+							%li.birthday
+								Введите дату Вашего рождения в формате ДД.ММ.ГГГГ
+								%br
+								%label(for="birthdate") Дата:
+								%input#birthdate(maxlength="10" name="birthdate" onclick="fillCalender(this);" size="25" type="text")
+								.panel
+									%select#birthmonth(onchange="fillCalender(this)")
+									%button#incBtn-5(onclick="incYear(-5, this);" type="button") &lt;&lt;
+									%button#incBtn-1(onclick="incYear(-1, this);" type="button") &lt;
+									%select#birthyear(onchange="fillCalender(this);")
+									%button#incBtn1(onclick="incYear(1, this);" type="button") &gt;
+									%button#incBtn5(onclick="incYear(5, this);" type="button") &gt;&gt;
+									#days-space
+								#valid41.InvalidMessage
+									%br
+									Дата не заполнена
+								%p
+							%li
+								%span#submitReset
+									%input#submit-button(type="submit" value="Отправить")
+									%input(onclick="window.location.reload()" type="reset" value="Очистить")
+				%section
+					%h2 Электронная почта:
+					%address
+						%br
+						Yandex
+						%a(href="mailto:mcapple@yandex.ru") mcapple@yandex.ru
+					%address
+						%br
+						Корпоративная
+						%a(href="mailto:e.borisov@krtech.ru") e.borisov@krtech.ru
+					%address
+						%br>/
+						Правительственная
+						%a(href="mailto:e.borisov@sev.gov.ru") e.borisov@sev.gov.ru
+				%section
+					%h3 Телефоны:
+					%ul
+						%li
+							личный:
+							= succeed ";" do
+								%span.tel +7(978)816-74-86
+						%li
+							служебный:
+							= succeed "." do
+								%span.tel +7(978)000-05-31
+				%section
+					%h3 Мессенджеры:
+					%ul
+						%li
+							%a(data-tooltip="McApple R. Sky в Telegram" href="https://t.me/mcapple" rel="nofollow" target="_blank")
+								%span.fa.fa-telegram Telegram;
+								/
+						%li Viber;
+						%li WhatsApp;
+						%li Skype;
+						%li ТамТам;
+						%li Диалог-М.
+				%section
+					%h3 почтоый адрес:
+					%address ул. Володарского, д. 20/3, кв. 1, г. Симферополь, Республика Крым, 295001
+					%p
+		%footer
+			= Haml::Engine.new(File.read("footer.haml")).render

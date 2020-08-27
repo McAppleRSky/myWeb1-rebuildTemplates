@@ -167,19 +167,11 @@
 <p>данные фотографии разбиты на группы, сделанные в разное время и различных обстоятельствах. Сделаны различными приборами</p>
 <div class='mainArticle'>
 <div class='imgList'>
-<!--
-<input type="file" id="file" nwworkdir="/mnt/d" multiple>
-<button onclick="readFile(document.getElementById('file'))">Read!</button>
--->
-<!-- files without ext (t.e. .txt) in object tag will be downloaded trought http protocol -->
 <input accept='.txt,text/plain' id='fileElem' multiple onchange='fillListFromFileAndfillPhotosAndAlbumHandler(event)' style='display:none' type='file'>
 <object data='img/list.txt' type='text/plain;charset=UTF-8'></object>
 <object data='img/listf.txt' type='text/plain;charset=UTF-8'></object>
-<!--
-<a href="#" id="fileSelect">Select list files</a>
--->
 </div>
-<script src='js/page4handler.js'></script>
+<script charset='utf-8' src='js/page4handler.js'></script>
 </div>
 <br>
 <br>
