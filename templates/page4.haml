@@ -11,6 +11,7 @@
 				$('.li-menu4').children().attr('href','#');
 				$('.tdMenu10').first().children().attr('href','page3.htm');
 				$('.tdMenu10').last().children().attr('href','page5.htm');
+				$('.commonTable tr td').last().empty().append('<a href="index.htm">На главную страницу</a>');
 			});
 		%title Мой персональный Веб-сайт
 
@@ -44,76 +45,26 @@
 						%th
 						%th
 					%tr
-						%td
-							%figure
-								%img(alt="2019 г. фотография с курсов по программе лидерства" height="200" src="img/album/photo_2019-10-22_16-49-22.jpg" title="фотография с курсов Лидерства")
-								%figcaption фотография с курсов Лидерства
-						%td
-							%figure
-								%img(alt="img8" height="200" src="img/1576360052_pressa_tv_prikolnye_foto_38.jpg" title="фотография Б")
-								%figcaption фотография Б
-						%td
-							%figure
-								%img(alt="img9" src="img/1576360073_pressa_tv_prikolnye_foto_01.jpg" title="фотография В" width="200")
-								%figcaption фотография В
-						%td
-							%figure
-								%img(alt="img10" height="200" src="img/1576705603_pressa_tv_fotoprikoly_07.jpg" title="фотография Г")
-								%figcaption фотография Г
-						%td
-							%figure
-								%img(alt="img11" src="img/1575850368_d15.jpg" title="фотография Д" width="200")
-								%figcaption фотография Д
-						%td
-							%figure
-								%img(alt="img12" height="200" src="img/1575974982_d2.jpg" title="фотография Е")
-								%figcaption фотография Е
+						-@array_photos1 = {'album/photo_2019-10-22_16-49-22.jpg': ['2019 г. фотография с курсов по программе лидерства','200','','фотография с курсов Лидерства','фотография с курсов Лидерства'],'1576360052_pressa_tv_prikolnye_foto_38.jpg': ['img8','200','','фотография Б','фотография Б'],'1576360073_pressa_tv_prikolnye_foto_01.jpg': ['img9','','200','фотография В','фотография В'],'1576705603_pressa_tv_fotoprikoly_07.jpg': ['img10','200','','фотография Г','фотография Г'],'1575850368_d15.jpg': ['img11','','200','фотография Д','фотография Д'],'1575974982_d2.jpg': ['img12','200','','фотография Е','фотография Е']};
+						-@array_photos1.each do |key, value|
+							%td
+								%figure
+									%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									%figcaption #{value[4]}
 					%tr
-						%td
-							%figure
-								%img(alt="img13" src="img/1575975602_d3.jpg" title="фотография Ж" width="200")
-								%figcaption фотография Ж
-						%td
-							%figure
-								%img(alt="img14" src="img/photo_2020-05-08_07-37-41.jpg" title="фотография З" width="200")
-								%figcaption фотография З
-						%td
-							%figure
-								%img(alt="img15" src="img/photo_2020-05-08_07-37-52.jpg" title="фотография И" width="200")
-								%figcaption фотография И
-						%td
-							%figure
-								%img(alt="img16" height="200" src="img/photo_2020-05-08_07-37-56.jpg" title="фотография К")
-								%figcaption фотография К
-						%td
-							%figure
-								%img(alt="img17" src="img/photo_2020-05-08_07-37-59.jpg" title="фотография Л" width="200")
-								%figcaption фотография Л
-						%td
-							%img(alt="img m" src="img/.jpg" width="200")
+						-@array_photos2 = {'1575975602_d3.jpg': ['img13','','200','фотография Ж','фотография Ж'],'photo_2020-05-08_07-37-41.jpg': ['img14','','200','фотография З','фотография З'],'photo_2020-05-08_07-37-52.jpg': ['img15','','200','фотография И','фотография И'],'photo_2020-05-08_07-37-56.jpg': ['img16','200','','фотография К','фотография К'],'photo_2020-05-08_07-37-59.jpg': ['img17','','200','фотография Л','фотография Л'],'.jpg': ['img m','','','','']};
+						-@array_photos2.each do |key, value|
+							%td
+								%figure
+									%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									%figcaption #{value[4]}
 					%tr
-						%td
-							%figure
-								%img(alt="img18" src="img/photo_2020-05-08_07-38-04.jpg" title="фотография М" width="200")
-								%figcaption фотография М
-						%td
-							%figure
-								%img(alt="img19" height="200" src="img/photo_2020-05-08_07-38-06.jpg" title="фотография Н")
-								%figcaption фотография Н
-						%td
-							%figure
-								%img(alt="img20" src="img/photo_2020-05-08_07-38-09.jpg" title="фотография О" width="200")
-								%figcaption фотография О
-						%td
-							%figure
-								%img(alt="img21" src="img/photo_2020-05-08_07-38-13.jpg" title="фотография П" width="200")
-								%figcaption фотография П
-						%td
-							%figure
-								%img(alt="img n" src="img/.jpg" title="фотография Р" width="200")
-								%figcaption фотография Р
-						%td
-							%a(href="index.htm") На главную страницу
+						-@array_photos3 = {'photo_2020-05-08_07-38-04.jpg': ['img18','','200','фотография М','фотография М'],'photo_2020-05-08_07-38-06.jpg': ['img19','200','','фотография Н','фотография Н'],'photo_2020-05-08_07-38-09.jpg': ['img20','','200','фотография О','фотография О'],'photo_2020-05-08_07-38-13.jpg': ['img21','','200','фотография П','фотография П'],'.png': ['img n','','200','фотография Р','фотография Р'],'': ['','','','','']};
+						-@array_photos3.each do |key, value|
+							%td
+								%figure
+									%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									%figcaption #{value[4]}
 				%table
 					%caption Фотографии последующие
 					%tr
