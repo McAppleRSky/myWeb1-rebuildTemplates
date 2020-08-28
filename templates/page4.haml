@@ -49,21 +49,45 @@
 						-@array_photos1.each do |key, value|
 							%td
 								%figure
-									%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									-if (value[1]=="")&&(value[2]=="")
+										%img(alt="#{value[0]}" src="img/#{key}" title="#{value[3]}")
+									-elsif (value[1]!="")&&(value[2]!="")
+										%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									-else
+										-if (value[2]=="")
+											%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}")
+										-elsif (value[1]=="")
+											%img(alt="#{value[0]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
 									%figcaption #{value[4]}
 					%tr
 						-@array_photos2 = {'1575975602_d3.jpg': ['img13','','200','фотография Ж','фотография Ж'],'photo_2020-05-08_07-37-41.jpg': ['img14','','200','фотография З','фотография З'],'photo_2020-05-08_07-37-52.jpg': ['img15','','200','фотография И','фотография И'],'photo_2020-05-08_07-37-56.jpg': ['img16','200','','фотография К','фотография К'],'photo_2020-05-08_07-37-59.jpg': ['img17','','200','фотография Л','фотография Л'],'.jpg': ['img m','','','','']};
 						-@array_photos2.each do |key, value|
 							%td
 								%figure
-									%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									-if (value[1]=="")&&(value[2]=="")
+										%img(alt="#{value[0]}" src="img/#{key}" title="#{value[3]}")
+									-elsif (value[1]!="")&&(value[2]!="")
+										%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									-else
+										-if (value[2]=="")
+											%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}")
+										-elsif (value[1]=="")
+											%img(alt="#{value[0]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
 									%figcaption #{value[4]}
 					%tr
 						-@array_photos3 = {'photo_2020-05-08_07-38-04.jpg': ['img18','','200','фотография М','фотография М'],'photo_2020-05-08_07-38-06.jpg': ['img19','200','','фотография Н','фотография Н'],'photo_2020-05-08_07-38-09.jpg': ['img20','','200','фотография О','фотография О'],'photo_2020-05-08_07-38-13.jpg': ['img21','','200','фотография П','фотография П'],'.png': ['img n','','200','фотография Р','фотография Р'],'': ['','','','','']};
 						-@array_photos3.each do |key, value|
 							%td
 								%figure
-									%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									-if (value[1]=="")&&(value[2]=="")
+										%img(alt="#{value[0]}" src="img/#{key}" title="#{value[3]}")
+									-elsif (value[1]!="")&&(value[2]!="")
+										%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
+									-else
+										-if (value[2]=="")
+											%img(alt="#{value[0]}" height="#{value[1]}" src="img/#{key}" title="#{value[3]}")
+										-elsif (value[1]=="")
+											%img(alt="#{value[0]}" src="img/#{key}" title="#{value[3]}" width="#{value[2]}")
 									%figcaption #{value[4]}
 				%table
 					%caption Фотографии последующие
