@@ -68,45 +68,10 @@
 					%h2#page2-2
 						Мои любимые сайты:
 					%ul
-						%li
-							%a(href="https://developer.mozilla.org/ru/")
-								Web документация Mozilla;
-						%li
-							%a(href="https://www.w3.org/TR/html50/")
-								HTML5. A vocabulary and associated APIs for HTML;
-						%li
-							%a(href="https://jquery-docs.ru")
-								jQuery на русском
-						%li
-							%a(href="https://bootstrap-4.ru/")
-								Bootstrap. Документация на русском языке;
-						%li
-							%a(href="https://webformyself.com/css-psevdoklassy-stilizaciya-polej-form-po-vvedennym-dannym/")
-								CSS псевдоклассы: стилизация полей форм по введенным данным;
-						%li
-							%a(href="https://apps.eky.hk/css-triangle-generator/")
-								CSS triangle generator
-						%li
-							%a(href="http://javascript.ru/manual")
-								Справочник javascript;
-						%li
-							%a(href="https://tools.dynamicdrive.com/favicon/")
-								Favorite icon generator
-						%li
-							%a(href="http://www.xiper.net/scripts/cusel/")
-								Выпадающие списки без select
-						%li
-							%a(href="http://vesti.ru/")
-								Вести 24 vesti.ru;
-						%li
-							%a(href="http://ukr.net/")
-								Новостной портал ukr.net;
-						%li
-							%a(href="http://pressa.tv/")
-								Подборка новостного медиа контента pressa.tv;
-						%li
-							%a(href="http://youtube.ru/")
-								Видеохостинг youtube.com .
+						-@array_res = {'https://developer.mozilla.org/ru' => 'Web документация Mozilla;', 'https://www.w3.org/TR/html50' => 'HTML5. A vocabulary and associated APIs for HTML;', 'https://jquery-docs.ru' => 'jQuery на русском;', 'https://bootstrap-4.ru' => 'Bootstrap. Документация на русском языке;', 'http://www.sass-lang.com' => 'Препроцессор sass/scss;', 'https://webformyself.com/css-psevdoklassy-stilizaciya-polej-form-po-vvedennym-dannym' => 'CSS псевдоклассы: стилизация полей форм по введенным данным;',"https://apps.eky.hk/css-triangle-generator" => "CSS triangle generator;","http://javascript.ru/manual" => "Справочник javascript;","https://tools.dynamicdrive.com/favicon" => "Favorite icon generator;","http://www.xiper.net/scripts/cusel" => "Выпадающие списки без select."};
+						-@array_res.each do |key, value|
+							%li
+								%a(href="#{key}") #{value}
 				%section
 					%h2#page2-3
 						Мои любимые книги:
