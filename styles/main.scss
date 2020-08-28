@@ -1,0 +1,62 @@
+$blue: #57b1dc;
+$icon: img/icon;
+@each $browser in ie, chrome, firefox, opera {
+	.#{$browser} {
+		background: url(#{$icon}/#{$browser}.png) no-repeat;
+	}
+}
+@mixin bwidth($width: 100%){
+	width: $width;
+}
+.base{
+  text-align: center;
+  font-family: serif;
+  font-weight: normal;
+}
+header {
+	@extend .base;
+  border-bottom: 1px solid #57b1dc;
+}
+aside{
+  float: right;
+  @include bwidth(19%);
+}
+main{
+  width: 80%;
+}
+footer{
+  border-top: 1px solid #57b1dc;
+}
+h1{
+	@extend .base;
+text-transform: uppercase;
+margin-top: 30px;
+}
+h2{
+color: #d1633c;
+font-size: 1em;
+}
+#idFigcaptionHeader{
+text-transform: none;
+font-size: 10pt;
+font-style: italic;
+}
+.fullTableMenu{
+  @include bwidth();
+}
+.tdMenu10{
+  @include bwidth(10%);
+}
+#tdMenu80{
+  @include bwidth(80%);
+}
+.cMenuRow{
+  text-align: center;
+  font-size: smaller;
+}
+.cMenuTabCol{
+  @include bwidth(14%);
+}
+.hide{
+  opacity: 0;
+}
