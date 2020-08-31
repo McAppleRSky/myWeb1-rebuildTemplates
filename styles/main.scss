@@ -54,9 +54,6 @@ font-style: italic;
   text-align: center;
   font-size: smaller;
 }
-.cMenuTabCol{
-  @include twidth(14%);
-}
 .hide{
   opacity: 0;
 }
