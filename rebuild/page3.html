@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang='ru'>
 <head>
-<script>
-  var htmPage = "page3"; // Учеба
-  $(function(){
-  	$('.li-menu3').children().attr('href','#');
-  	$('.tdMenu10').first().children().attr('href','page2.htm');
-  	$('.tdMenu10').last().children().attr('href','page4.htm');
-  });
-</script>
 <link href='css/top-menu-page3.css' rel='stylesheet' type='text/css'>
 <link href='css/page3.css' rel='stylesheet' type='text/css'>
 <meta content='text/html; charset=utf-8' http-equiv='content-type'>
@@ -19,11 +11,19 @@
 <link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
 <link href='css/postmaster.css' rel='stylesheet' type='text/css'>
 <style media='screen'></style>
-<script charset='utf-8' src='js/gettime.js'></script>
-<script charset='utf-8' src='js/cookieHandler.js'></script>
-<script charset='utf-8' src='js/pageCounter.js'></script>
-<script charset='utf-8' src='js/jquery-1.12.4.js'></script>
+<script src='js/cookieHandler.js'></script>
+<script src='js/jquery-1.12.4.js'></script>
+<script src='js/gettime.js'></script>
 
+<script>
+  var htmPage = "page3"; // Учеба
+  $(function(){
+  	$('.li-menu3').children().attr('href','#');
+  	$('.tdMenu10').first().children().attr('href','page2.htm');
+  	$('.tdMenu10').last().children().attr('href','page4.htm');
+  });
+</script>
+<script src='js/pageCounter.js'></script>
 <title>
 Мой персональный Веб-сайт
 </title>
@@ -31,7 +31,7 @@
 <body>
 <header>
 <nav id='top-menu-1'>
-<script charset='utf-8' src='js/topMenuHandler.js'></script>
+<script src='js/topMenuHandler.js'></script>
 <ul>
 <li id='li-menu0' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
 <a href='index.htm'>

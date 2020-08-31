@@ -1,6 +1,9 @@
 !!!
 %html(lang="ru")
 	%head
+		%link(href="css/top-menu-page3.css" rel="stylesheet" type="text/css")
+		%link(href="css/page3.css" rel="stylesheet" type="text/css")
+		= Haml::Engine.new(File.read("head.haml")).render
 		:javascript
 			var htmPage = "page3"; // Учеба
 			$(function(){
@@ -8,9 +11,7 @@
 				$('.tdMenu10').first().children().attr('href','page2.htm');
 				$('.tdMenu10').last().children().attr('href','page4.htm');
 			});
-		%link(href="css/top-menu-page3.css" rel="stylesheet" type="text/css")
-		%link(href="css/page3.css" rel="stylesheet" type="text/css")
-		= Haml::Engine.new(File.read("head.haml")).render
+		%script(src="js/pageCounter.js")
 		%title
 			Мой персональный Веб-сайт
 	%body

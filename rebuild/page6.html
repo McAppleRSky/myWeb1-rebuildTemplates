@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang='ru'>
 <head>
-<script>
-  var htmPage = "page6"; // Тест по дисциплине
-  $(function(){
-  	$('.li-menu6').children().attr('href','#');
-  	$('.tdMenu10').first().children().attr('href','page5.htm');
-  	$('.tdMenu10').first().empty();
-  });
-</script>
 <meta content='text/html; charset=utf-8' http-equiv='content-type'>
 <link href='favicon.ico' rel='shortcut icon'>
 <link href='css/main.css' rel='stylesheet' type='text/css'>
@@ -17,23 +9,31 @@
 <link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
 <link href='css/postmaster.css' rel='stylesheet' type='text/css'>
 <style media='screen'></style>
-<script charset='utf-8' src='js/gettime.js'></script>
-<script charset='utf-8' src='js/cookieHandler.js'></script>
-<script charset='utf-8' src='js/pageCounter.js'></script>
-<script charset='utf-8' src='js/jquery-1.12.4.js'></script>
+<script src='js/cookieHandler.js'></script>
+<script src='js/jquery-1.12.4.js'></script>
+<script src='js/gettime.js'></script>
 
 <link href='css/top-menu-page6.css' rel='stylesheet' type='text/css'>
 <link href='css/page6DefaultFormStyle.css' rel='stylesheet' type='text/css'>
 <link href='css/modal.css' rel='stylesheet' type='text/css'>
-<script charset='utf-8' src='js/bootstrap.js'></script>
-<script charset='utf-8' src='js/popover.js'></script>
-<script charset='utf-8' src='js/page6valid.js'></script>
+<script src='js/bootstrap.js'></script>
+<script src='js/popover.js'></script>
+<script src='js/page6valid.js'></script>
+<script>
+  var htmPage = "page6"; // Тест по дисциплине
+  $(function(){
+  	$('.li-menu6').children().attr('href','#');
+  	$('.tdMenu10').first().children().attr('href','page5.htm');
+  	$('.tdMenu10').first().empty();
+  });
+</script>
+<script src='js/pageCounter.js'></script>
 <title>Мой персональный Веб-сайт</title>
 </head>
 <body>
 <header class='blured'>
 <nav id='top-menu-1'>
-<script charset='utf-8' src='js/topMenuHandler.js'></script>
+<script src='js/topMenuHandler.js'></script>
 <ul>
 <li id='li-menu0' onmouseout='ChangeOut(this)' onmouseover='ChangeOver(this)'>
 <a href='index.htm'>
@@ -406,7 +406,7 @@ Nicname должен быть уникальным по этому значен�
 Негатвный статус разрешения браузером обработки js кода
 отображается в документе строкой выше. Позитивный статус
 выводится в консоль браузера (доступна в меню разработчика).</pre>
-<script charset='utf-8' src='js/testAllowJsBrowserLog.js'></script>
+<script src='js/testAllowJsBrowserLog.js'></script>
 </section>
 </main>
 <footer class='blured'>

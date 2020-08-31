@@ -1,6 +1,9 @@
 !!!
 %html(lang="ru")
 	%head
+		%link(href="css/top-menu-page4.css" rel="stylesheet" type="text/css")
+		%link(href="css/modal.css" rel="stylesheet" type="text/css")
+		= Haml::Engine.new(File.read("head.haml")).render
 		:javascript
 			var htmPage = "page4"; // Фотоальбом
 			$(function(){
@@ -9,11 +12,8 @@
 				$('.tdMenu10').last().children().attr('href','page5.htm');
 				$('.commonTable tr td').last().empty().append('<a href="index.htm">На главную страницу</a>');
 			});
-		%link(href="css/top-menu-page4.css" rel="stylesheet" type="text/css")
-		%link(href="css/modal.css" rel="stylesheet" type="text/css")
-		= Haml::Engine.new(File.read("head.haml")).render
+		%script(src="js/pageCounter.js")
 		%title Мой персональный Веб-сайт
-
 	%body
 		%header
 			= Haml::Engine.new(File.read("nav.haml")).render
@@ -30,7 +30,7 @@
 						%input#fileElem(accept=".txt,text/plain" onchange="fillListFromFileAndfillPhotosAndAlbumHandler(event)" style="display:none" type="file" multiple)
 						%object(data="img/list.txt" type="text/plain;charset=UTF-8")
 						%object(data="img/listf.txt" type ="text/plain;charset=UTF-8")
-					%script(src="js/page4handler.js" charset="utf-8")
+					%script(src="js/page4handler.js")
 				%br/
 				%br/
 			%article
