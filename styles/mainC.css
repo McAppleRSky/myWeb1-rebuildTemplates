@@ -10,12 +10,10 @@
 .opera {
   background: url(img/icon/opera.png) no-repeat; }
 
-.base, header, h1 {
+header {
   text-align: center;
   font-family: serif;
-  font-weight: normal; }
-
-header {
+  font-weight: normal;
   border-bottom: 1px solid #57b1dc; }
 
 aside {
@@ -29,6 +27,9 @@ footer {
   border-top: 1px solid #57b1dc; }
 
 h1 {
+  text-align: center;
+  font-family: serif;
+  font-weight: normal;
   text-transform: uppercase;
   margin-top: 30px; }
 

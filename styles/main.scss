@@ -5,21 +5,21 @@ $icon: img/icon;
 		background: url(#{$icon}/#{$browser}.png) no-repeat;
 	}
 }
-@mixin bwidth($width: 100%){
+@mixin twidth($width: 100%){
 	width: $width;
 }
-.base{
+@mixin tbase{
   text-align: center;
   font-family: serif;
   font-weight: normal;
 }
 header {
-	@extend .base;
+	@include tbase;
   border-bottom: 1px solid #57b1dc;
 }
 aside{
   float: right;
-  @include bwidth(19%);
+  @include twidth(19%);
 }
 main{
   width: 80%;
@@ -28,7 +28,7 @@ footer{
   border-top: 1px solid #57b1dc;
 }
 h1{
-	@extend .base;
+	@include tbase;
 text-transform: uppercase;
 margin-top: 30px;
 }
@@ -42,20 +42,20 @@ font-size: 10pt;
 font-style: italic;
 }
 .fullTableMenu{
-  @include bwidth();
+  @include twidth();
 }
 .tdMenu10{
-  @include bwidth(10%);
+  @include twidth(10%);
 }
 #tdMenu80{
-  @include bwidth(80%);
+  @include twidth(80%);
 }
 .cMenuRow{
   text-align: center;
   font-size: smaller;
 }
 .cMenuTabCol{
-  @include bwidth(14%);
+  @include twidth(14%);
 }
 .hide{
   opacity: 0;

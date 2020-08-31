@@ -4,8 +4,6 @@
 !!!
 %html(lang="ru")
 	%head
-		= Haml::Engine.new(File.read("head.haml")).render
-		%link(href="css/top-menu-page0.css" rel="stylesheet" type="text/css")
 		:javascript
 			var htmPage = "index"; // Главная страница
 			$(function(){
@@ -13,6 +11,8 @@
 				$('.tdMenu10').first().empty();
 				$('.tdMenu10').last().children().attr('href','page1.htm');
 			});
+		= Haml::Engine.new(File.read("head.haml")).render
+		%link(href="css/top-menu-page0.css" rel="stylesheet" type="text/css")
 		%title
 			Мой персональный Веб-сайт
 	%body

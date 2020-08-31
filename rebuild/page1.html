@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang='ru'>
 <head>
+<script>
+  var htmPage = "page1"; //Обо мне
+  $(function(){
+  	$('.li-menu1').children().attr('href','#');
+  	$('.tdMenu10').first().children().attr('href','index.htm');
+  	$('.tdMenu10').last().children().attr('href','page2.htm');
+  });
+</script>
 <meta content='text/html; charset=utf-8' http-equiv='content-type'>
 <link href='favicon.ico' rel='shortcut icon'>
 <link href='css/main.css' rel='stylesheet' type='text/css'>
@@ -15,14 +23,6 @@
 <script charset='utf-8' src='js/jquery-1.12.4.js'></script>
 
 <link href='css/top-menu-page1.css' rel='stylesheet' type='text/css'>
-<script>
-  var htmPage = "page1"; //Обо мне
-  $(function(){
-  	$('.li-menu1').children().attr('href','#');
-  	$('.tdMenu10').first().children().attr('href','index.htm');
-  	$('.tdMenu10').last().children().attr('href','page2.htm');
-  });
-</script>
 <title>
 Мой персональный Веб-сайт
 </title>

@@ -1,6 +1,13 @@
 !!!
 %html(lang="ru")
 	%head
+		:javascript
+			var htmPage = "page5"; // Контакты
+			$(function(){
+				$('.li-menu5').children().attr('href','#');
+				$('.tdMenu10').first().children().attr('href','page4.htm');
+				$('.tdMenu10').last().children().attr('href','page6.htm');
+			});
 		= Haml::Engine.new(File.read("head.haml")).render
 		%meta(name="viewport" content="width=device-width, initial-scale=1")
 		%link(href="css/top-menu-page5.css" rel="stylesheet" type="text/css")
@@ -11,13 +18,6 @@
 		%script(src="js/popover.js" charset="utf-8")
 		%script(src="js/calenderElement.js" charset="utf-8")
 		%script(src="js/page5valid.js" charset="utf-8")
-		:javascript
-			var htmPage = "page5"; // Контакты
-			$(function(){
-				$('.li-menu5').children().attr('href','#');
-				$('.tdMenu10').first().children().attr('href','page4.htm');
-				$('.tdMenu10').last().children().attr('href','page6.htm');
-			});
 		%title Мой персональный Веб-сайт
 	%body
 		%header

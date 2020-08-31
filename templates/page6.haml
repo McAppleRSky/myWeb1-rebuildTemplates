@@ -1,13 +1,6 @@
 !!!
 %html(lang="ru")
 	%head
-		= Haml::Engine.new(File.read("head.haml")).render
-		%link(href="css/top-menu-page6.css" rel="stylesheet" type="text/css")
-		%link(href="css/page6DefaultFormStyle.css" rel="stylesheet" type="text/css")
-		%link(href="css/modal.css" rel="stylesheet" type="text/css")
-		%script(src="js/bootstrap.js" charset="utf-8")
-		%script(src="js/popover.js" charset="utf-8")
-		%script(src="js/page6valid.js" charset="utf-8")
 		:javascript
 			var htmPage = "page6"; // Тест по дисциплине
 			$(function(){
@@ -15,6 +8,13 @@
 				$('.tdMenu10').first().children().attr('href','page5.htm');
 				$('.tdMenu10').first().empty();
 			});
+		= Haml::Engine.new(File.read("head.haml")).render
+		%link(href="css/top-menu-page6.css" rel="stylesheet" type="text/css")
+		%link(href="css/page6DefaultFormStyle.css" rel="stylesheet" type="text/css")
+		%link(href="css/modal.css" rel="stylesheet" type="text/css")
+		%script(src="js/bootstrap.js" charset="utf-8")
+		%script(src="js/popover.js" charset="utf-8")
+		%script(src="js/page6valid.js" charset="utf-8")
 		%title Мой персональный Веб-сайт
 	%body
 		%header.blured

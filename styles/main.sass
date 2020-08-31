@@ -4,13 +4,15 @@ $icon: img/icon
 	.#{$browser}
 		background: url(#{$icon}/#{$browser}.png) no-repeat
 
-@mixin bwidth($width: 100%)
+@mixin twidth($width: 100%)
 	width: $width
-
-header
+@mixin tbase
 	text-align: center
 	font-family: serif
 	font-weight: normal
+
+header
+	@include tbase
 	border-bottom: 1px solid $blue
 
 aside
@@ -24,9 +26,7 @@ footer
 	border-top: 1px solid $blue
 
 h1
-	text-align: center
-	font-family: serif
-	font-weight: normal
+	@include tbase
 	text-transform: uppercase
 	margin-top: 30px
 
@@ -40,20 +40,20 @@ h2
 	font-style: italic
 
 .fullTableMenu
-	width: 100%
+	@include twidth()
 
 .tdMenu10
-	width: 10%
+	@include twidth(10%)
 
 #tdMenu80
-	width: 80%
+	@include twidth(80%)
 
 .cMenuRow
 	text-align: center
 	font-size: smaller
 
 .cMenuTabCol
-	width: 14%
+	@include twidth(14%)
 
 .hide
 	opacity: 0
