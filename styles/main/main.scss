@@ -1,8 +1,15 @@
 $blue: #57b1dc;
-$icon: ../img/icon;
+$icon: "../img/icon";
+%browser{
+	min-height: 16px;
+	padding-left: 20px;
+  background-repeat: no-repeat;
+  background-position: right 5%;
+}
 @each $browser in ie, chrome, firefox, opera {
 	.#{$browser} {
-		background: url(#{$icon}/#{$browser}.png) no-repeat right 5%;
+		@extend %browser;
+		background-image: url(#{$icon}/#{$browser}.png);
 	}
 }
 @mixin twidth($width: 100%){
