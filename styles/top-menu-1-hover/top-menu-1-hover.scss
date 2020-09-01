@@ -1,0 +1,17 @@
+top-menu-1 li a:hover {
+	color: #57b1dc;
+	background: #c0c0c0;
+}
+
+#top-menu-1 #li-menu0:hover>ul{
+	display: block;
+}
+#top-menu-1 .li-menu2:hover>ul{
+	display: block;
+}
+
+#top-menu-1 .li-menu2 :focus ~ #sub-menu,
+#top-menu-1 .li-menu2 :active ~ #sub-menu,
+#top-menu-1 .li-menu2 #sub-menu:hover{
+	display: block;
+}

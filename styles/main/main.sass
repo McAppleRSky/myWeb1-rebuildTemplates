@@ -1,0 +1,56 @@
+$blue: #57b1dc
+$icon: img/icon
+@each $browser in ie, chrome, firefox, opera
+	.#{$browser}
+		background: url(#{$icon}/#{$browser}.png) no-repeat right 5%
+
+@mixin twidth($width: 100%)
+	width: $width
+@mixin tbase
+	text-align: center
+	font-family: serif
+	font-weight: normal
+
+header
+	@include tbase
+	border-bottom: 1px solid $blue
+
+aside
+	float: right
+	width: 19%
+
+main
+	width: 80%
+
+footer
+	border-top: 1px solid $blue
+
+h1
+	@include tbase
+	text-transform: uppercase
+	margin-top: 30px
+
+h2
+	color: #d1633c
+	font-size: 1em
+
+#idFigcaptionHeader
+	text-transform: none
+	font-size: 10pt
+	font-style: italic
+
+.fullTableMenu
+	@include twidth()
+
+.tdMenu10
+	@include twidth(10%)
+
+#tdMenu80
+	@include twidth(80%)
+
+.cMenuRow
+	text-align: center
+	font-size: smaller
+.hide
+	opacity: 0
+
