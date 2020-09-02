@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script src="coffeescript.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/coffeescript">
+list=(type, list...)->
+  document.write("<" + type + "L>")
+	document.write("<LI>" + i for i in list + "</LI>")
+	document.write("</" + type + "L>")
+    </script>
+  </body>
+</html>
