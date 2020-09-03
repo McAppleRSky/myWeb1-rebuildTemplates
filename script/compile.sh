@@ -1,1 +1,2 @@
-coffee -b -c -o compile page2/nowrap
+coffee -b -c -o compile page2
+coffee -b -c -o compile page4
