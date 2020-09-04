@@ -11,7 +11,7 @@ var lists = [],
   photos = [],
   reader = [],
   readerIndex = -1,
-  mainArticle, imgList,
+//  mainArticle, imgList,
   fileElem,
   full = false,
   formated = false,
@@ -77,12 +77,13 @@ function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
         if (str[0].split(';').length == 1) {
           lists.push(str);
           full = lists.length - 1;
-          document.querySelector(
-            `object[data='${imgListPath[0] + listFilename}']`
-          ).style.display = "none";
+          document.querySelector('object[data="' + imgListPath[0] + listFilename + '"]')
+          	.style.display = "none";
         }
         if (lists.length == listCount) {
-          mainArticle.removeChild(imgList);
+          $(".mainArticle")
+            .children(".imgList")
+              .remove();
           fillPhotos();
           albumHandler();
         }
@@ -98,7 +99,7 @@ function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
           if (str[0].split(';').length == 4) {
             lists.push(str);
             formated = lists.length - 1;
-            $(`object[data='${imgListPath[0] + listfFilename}']`)
+            $('object[data="'+ imgListPath[0] + listfFilename + '"]')
               .css("display", "none");
           }
           if (lists.length == listCount) {
@@ -114,15 +115,18 @@ function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
     }
   }
 }
+          photos.forEach((item, i) => {
+            if (item.file == componentSrc[componentSrc.length - 1])
+              currentPhotoView = i;
+          });
 
 function fillListFromHttp() {
   let curListValueCount;
   for (i = 0; i < listCount; i++) {
     try {
-      lists[i] = window.frames[i].document
-        .querySelector("pre").textContent.split("\n");
+      lists[i] = window.frames[i].document.querySelector("pre").textContent.split("\n");
     } catch (e) {
-      myConsole.log(`list${i} with exception| ${e}`);
+      myConsole.log("list"+i+" with exception| "+e);
     } finally {
       curListValueCount = lists[i][0].split(';').length;
       if (curListValueCount == 4) {

@@ -11,8 +11,6 @@ lists 			= []
 photos 			= []
 reader 			= []
 readerIndex 	= -1
-mainArticle = null
-imgList = null
 fileElem = null
 full 			= false
 formated 		= false
@@ -21,6 +19,9 @@ curPhotoViewWidth = 0
 currentPhotoView = null
 curPhotoViewHeight = null
 myConsole = window.console
+i = null
+j = null
+k = null
 
 Photo = (file, title, width, height) ->
 	this.file = file
@@ -61,53 +62,53 @@ fillListAndPhotosAndAlbumHandler=->
 			myConsole.log("invalid protocol")
 	return
 
-fillListFromFileAndfillPhotosAndAlbumHandler=(event)->
-	for item in event.target.files
-		if item.name == listFilename and full == false
-			reader[++readerIndex] = new FileReader()
+fillListFromFileAndfillPhotosAndAlbumHandler = (event) ->
+	files = event.target.files
+	i = 0
+	while i < files.length
+		if files[i].name == listFilename and full == false
+			reader[++readerIndex] = new FileReader
 
-			reader[readerIndex].onload = ->
-				str = @result.split("\n")
-				full = null
+			reader[readerIndex].onload = (e) ->
+				str = @result.split('\n')
 				if str[0].split(';').length == 1
 					lists.push str
 					full = lists.length - 1
-					document.querySelector('object[data="' + imgListPath[0] + listFilename + '"]')
-						.style.display = "none"
+					document.querySelector('object[data="' + imgListPath[0] + listFilename + '"]').style.display = 'none'
 				if lists.length == listCount
-					mainArticle.removeChild imgList
+					$('.mainArticle').children('.imgList').remove()
 					fillPhotos()
 					albumHandler()
 				return
 
-			reader[readerIndex].readAsText(item)
+			reader[readerIndex].readAsText files[i]
 		else
-			if item.name == listfFilename and formated == false
-				reader[++readerIndex] = new FileReader()
+			if files[i].name == listfFilename and formated == false
+				reader[++readerIndex] = new FileReader
 
-				reader[readerIndex].onload =->
-					str = @result.split("\n")
+				reader[readerIndex].onload = (e) ->
+					str = @result.split('\n')
 					if str[0].split(';').length == 4
 						lists.push str
 						formated = lists.length - 1
-						document.querySelector('object[data="'+ imgListPath[0] + listfFilename + '"]')
-							.css "display", "none"
+						$('object[data="' + imgListPath[0] + listfFilename + '"]').css 'display', 'none'
 					if lists.length == listCount
-						$(".mainArticle").children(".imgList").remove()
+						$('.mainArticle').children('.imgList').remove()
 						fillPhotos()
 						albumHandler()
 					return
 
-				reader[readerIndex].readAsText(item)
-	return 
+				reader[readerIndex].readAsText files[i]
+		i++
+	return
 
 fillListFromHttp = ->
+	curListValueCount = null
 	i = 0
 	while i < listCount
-		curListValueCount = null
 		try lists[i] = window.frames[i].document.querySelector("pre").textContent.split "\n"
 		catch e
-			myConsole.log "list${i} with exception| ${e}"
+			myConsole.log "list" + i + " with exception| " + e
 		finally
 			curListValueCount = lists[i][0].split(';').length
 			if curListValueCount == 4
@@ -119,18 +120,20 @@ fillListFromHttp = ->
 fillPhotos = ->
 	curPhotoParam = null
 	fileInList = null
-	for item1 in	lists[formated]
-		curPhotoParam = item1.split(';')
+	for item in lists[formated]
+		curPhotoParam = item.split(';')
 		fileInList = lists[full].indexOf(curPhotoParam[file])
 		if lists[full].includes(curPhotoParam[file])
 			if curPhotoParam.length == 4
-				photos.push new Photo(lists[full].splice(fileInList, 1)[0],
+				photos.push new Photo(
+					lists[full].splice(fileInList, 1)[0],
 					curPhotoParam[title],
 					curPhotoParam[width],
-					curPhotoParam[height])
-	for item2 in	lists[full]
-		if item2 != ""
-			photos.push new Photo item2, item2, "100", "100"
+					curPhotoParam[height]
+				)
+	for item in lists[full]
+		if item != ""
+			photos.push new Photo item, item, "100", "100"
 	return
 
 albumHandler = ->
@@ -146,33 +149,33 @@ albumHandler = ->
 	figEl = null
 	imgEl = null
 	figcapEl = null
-	i_0 = 0
-	j_0 = 0
-	k_0 = 0
+	i = 0
+	k = 0
 	photoTable = document.createElement "table"
 	photoTable.id = "photoTable"
 	photoTable.setAttribute "width", "" + tableWidthPercent + "%"
-	while k_0 < photos.length
-		newRow = photoTable.insertRow i_0
-		while j_0 < cellCount
+	while k < photos.length
+		newRow = photoTable.insertRow i
+		j = 0
+		while j < cellCount
 			newCell = newRow.insertCell -1
-			if k_0 < photos.length
+			if k < photos.length
 				newCell.width = "" + tableWidthPercent / cellCount
 				newCell.style.textAlign = "center"
-				fileName = imgListPath[0] + imgListPath[1] + photos[k_0].file
+				fileName = imgListPath[0] + imgListPath[1] + photos[k].file
 
 				imgEl = document.createElement "img"
-				imgEl.setAttribute "value", photos[k_0].file
+				imgEl.setAttribute "value", photos[k].file
 				imgEl.setAttribute "src", fileName
-				imgEl.setAttribute "width", photos[k_0].width
-				imgEl.setAttribute "height", photos[k_0].height
+				imgEl.setAttribute "width", photos[k].width
+				imgEl.setAttribute "height", photos[k].height
 
 				imgEl.onclick = (event) -> 
 					currentSrc = event.path[0].src
 					componentSrc = currentSrc.split '/'
-					photos.forEach((item_0, i_1) =>
+					photos.forEach((item_0, i_0) =>
 						if item_0.file == componentSrc[componentSrc.length - 1]
-							currentPhotoView = i_1
+							currentPhotoView = i_0
 						return
 					)
 					$("#viewLayer").addClass("win-modal").removeClass "win"
@@ -182,7 +185,7 @@ albumHandler = ->
 					return
 
 				figcapEl = document.createElement "figcaption"
-				figcapEl.textContent = photos[k_0].title
+				figcapEl.textContent = photos[k].title
 				figcapEl.classList.add "figcapTitle"
 				figEl = document.createElement "figure"
 				figEl.appendChild imgEl
@@ -190,9 +193,9 @@ albumHandler = ->
 				anchEl = document.createElement "a"
 				anchEl.appendChild figEl
 				newCell.appendChild anchEl
-				k_0++
-			j_0++
-		i_0++
+				k++
+			j++
+		i++
 
 	photoTable.classList.add "blured"
 
@@ -289,5 +292,5 @@ setPhotoViewLayer = (src) ->
 				}, 300
 	$("#viewLayer")
 		.find("td").eq(1).empty()
-		.append "фото "+currentPhotoView+1+" из "+photos.length
+		.append "фото " + currentPhotoView + 1 + " из " + photos.length
 	return
