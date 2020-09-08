@@ -69,7 +69,8 @@
 					%h2#page2-2
 						Мои любимые сайты:
 					%ul
-						-@array_res = {'https://developer.mozilla.org/ru' => 'Web документация Mozilla;', 'https://www.w3.org/TR/html50' => 'HTML5. A vocabulary and associated APIs for HTML;', 'https://jquery-docs.ru' => 'jQuery на русском;', 'https://bootstrap-4.ru' => 'Bootstrap. Документация на русском языке;', 'http://www.sass-lang.com' => 'Препроцессор sass/scss;', 'https://webformyself.com/css-psevdoklassy-stilizaciya-polej-form-po-vvedennym-dannym' => 'CSS псевдоклассы: стилизация полей форм по введенным данным;',"https://apps.eky.hk/css-triangle-generator" => "CSS triangle generator;","http://javascript.ru/manual" => "Справочник javascript;","https://tools.dynamicdrive.com/favicon" => "Favorite icon generator;","http://www.xiper.net/scripts/cusel" => "Выпадающие списки без select."};
+						-@array_res = {'https://developer.mozilla.org/ru' => 'Web документация Mozilla;', 'https://www.w3.org/TR/html50' => 'HTML5. A vocabulary and associated APIs for HTML;', 'https://jquery-docs.ru' => 'jQuery на русском;', 'https://bootstrap-4.ru' => 'Bootstrap. Документация на русском языке;', 'http://www.sass-lang.com' => 'Препроцессор sass/scss;', 'https://webformyself.com/css-psevdoklassy-stilizaciya-polej-form-po-vvedennym-dannym' => 'CSS псевдоклассы: стилизация полей форм по введенным данным;',"https://apps.eky.hk/css-triangle-generator" => "CSS triangle generator;","http://javascript.ru/manual" => "Справочник javascript;","https://tools.dynamicdrive.com/favicon" => "Favorite icon generator;","http://www.xiper.net/scripts/cusel" => "Выпадающие списки без select;","http://js2.coffee" => "js2coffee - convert JavaScript to CoffeeScript."};
+							
 						-@array_res.each do |key, value|
 							%li
 								%a(href="#{key}") #{value}

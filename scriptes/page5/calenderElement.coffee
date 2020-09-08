@@ -8,8 +8,6 @@ birthmonth	= null
 birthyear	= null
 daysTSpace	= null
 appendTableFlag = false
-i = null
-j = null
 
 fillBirthdate = (date, month, year) ->
 	monthNumbers = ("01,02,03,04,05,06,07,08,09,10,11,12").split(',')
@@ -36,25 +34,28 @@ initDateElements = ->
 	year 		= srcDate.getFullYear()
 	fillBirthdate(date, month, year)
 
-	monthNames.forEach((monthName, i) =>
+	monthNames.forEach((monthName, i_1) =>
 		optionMonth = document.createElement "option"
 		optionMonth.textContent = monthName
-		optionMonth.value = i;
+		optionMonth.value = i_1;
 		birthmonth.appendChild optionMonth
+		return
 	)
 
 	birthmonth.value = month
 
 	optionYear = null
-	while i<12
+	i_0 = 0
+	while i_0<12
 		optionYear = document.createElement "option"
 		birthyear.appendChild optionYear
-		i++
+		i_0++
 	optionYear.textContent = year
 	birthyear.value = year
 	fillYear(birthyear)
 
 	daysTSpace.value = date
+	return
 
 fillYear = (yearSelector) ->
 	year =	Number(yearSelector.value)
@@ -66,6 +67,8 @@ fillYear = (yearSelector) ->
 		options[j].setAttribute("value", i)
 		i--
 		j++
+	yearSelector.value = year
+	return
 
 incYear = (inc, runnerElement) ->
 	year = Number(birthyear.value)
@@ -73,15 +76,14 @@ incYear = (inc, runnerElement) ->
 	fillYear(birthyear)
 	fillBirthdate(daysTSpace.value, birthmonth.value, birthyear.value)
 	fillCalender(runnerElement)
+	return
 
-fillCalender = (runnerElement) ->
-	console.log(`start filling calender ${runnerElement.id}`);
-	if runnerElement.id == "birthmonth"
-		fillBirthdate(daysTSpace.value, birthmonth.value, birthyear.value
-
-	if runnerElement.id == "birthyear"
-		fillYear(runnerElement)
-		fillBirthdate(daysTSpace.value, birthmonth.value, birthyear.value)
+fillCalender = (runnerElement_0) ->
+	if runnerElement_0.id == "birthmonth"
+		fillBirthdate daysTSpace.value, birthmonth.value, birthyear.value
+	if runnerElement_0.id == "birthyear"
+		fillYear(runnerElement_0)
+		fillBirthdate daysTSpace.value, birthmonth.value, birthyear.value
 
 	daysTable = null
 	daysTBody = null
@@ -95,10 +97,11 @@ fillCalender = (runnerElement) ->
 	daysTBody = document.createElement "tbody"
 	daysTr = document.createElement "tr"
 	daysTh = new Array(7)
-	daysTh.forEach((dayTh, i) =>
+	daysTh.forEach((dayTh, i_2) =>
 		dayTh = document.createElement("th")
-		dayTh.textContent = euroeastDays[i]
+		dayTh.textContent = euroeastDays[i_2]
 		daysTr.appendChild(dayTh)
+		return
 	)
 
 	daysTable.id = "calenderTableUniq"
@@ -174,3 +177,4 @@ fillCalender = (runnerElement) ->
 	if appendChildTrFlag == false
 		daysTBody.appendChild(daysTrs[tokenRow])
 		appendChildTrFlag = true
+	return
